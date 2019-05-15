@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'person.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,6 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Person person = new Person();
+    person.setName('Tham');
+
+    print(person);
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
