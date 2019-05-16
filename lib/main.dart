@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     Person person = new Person();
-    person.setName('Tham');
+    person.setName('Hannah');
 
     print(person);
 
