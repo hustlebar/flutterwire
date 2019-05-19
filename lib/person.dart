@@ -16,8 +16,12 @@ class Person {
 
   List<String> greetings = ['World', 'Mars', 'Oregon', 'Barry'];
   void sayGreetings() {
-    for (var greeting in greetings) {
+    for (String greeting in greetings) {
       print('Hello $greeting');
     }
+  }
+
+  int total(int a, int b) {
+    return a + b;
   }
 }
