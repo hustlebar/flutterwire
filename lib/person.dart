@@ -13,4 +13,11 @@ class Person {
 
   @override
   String toString() => 'Person is $_name';
+
+  List<String> greetings = ['World', 'Mars', 'Oregon', 'Barry'];
+  void sayGreetings() {
+    for (var greeting in greetings) {
+      print('Hello $greeting');
+    }
+  }
 }

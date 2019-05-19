@@ -29,6 +29,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    Person person = new Person();
+    person.sayGreetings();
+    
     setState(() {
       _counter++;
     });
@@ -36,12 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    Person person = new Person();
-    person.setName('Hannah');
-
-    print(person);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
