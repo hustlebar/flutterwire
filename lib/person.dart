@@ -23,11 +23,14 @@ class Person {
 
   int total(int a, int b) {
     int total = a + b;
-    if (total % 2 == 0) {
-      print('Total is an even number');
-    } else {
-      print('Total is an odd number');
-    }
+//    if (total % 2 == 0) {
+//      print('Total is an even number');
+//    } else {
+//      print('Total is an odd number');
+//    }
+    String message;
+    message = (total % 2 == 0 ? 'Even Number' : 'Odd number');
+    print(message);
 
     return total;
   }
