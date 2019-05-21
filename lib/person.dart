@@ -19,6 +19,9 @@ class Person {
     for (String greeting in greetings) {
       print('Hello $greeting');
     }
+
+    print('Another way of for loop');
+    greetings.forEach((greeting) => print('Hello from $greeting'));
   }
 
   int total(int a, int b) {
