@@ -22,6 +22,13 @@ class Person {
   }
 
   int total(int a, int b) {
-    return a + b;
+    int total = a + b;
+    if (total % 2 == 0) {
+      print('Total is an even number');
+    } else {
+      print('Total is an odd number');
+    }
+
+    return total;
   }
 }
