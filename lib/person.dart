@@ -22,6 +22,10 @@ class Person {
 
     print('Another way of for loop');
     greetings.forEach((greeting) => print('Hello from $greeting'));
+
+    print('Arrow => function');
+    String makeGreeting(String name) => 'Hello $name';
+    print(makeGreeting('Tham'));
   }
 
   int total(int a, int b) {
