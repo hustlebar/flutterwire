@@ -38,6 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
     person.optionalParam(10, 15);
 
     Animal animal = new Animal('Suki', 'Cat');
+    print(animal.hashCode);
+
+    Animal kuttiSuki = Animal.fromProps('Kutti Suki', 'Cat');
+    print(kuttiSuki.hashCode);
 
     setState(() {
       _counter++;
