@@ -45,4 +45,8 @@ class Person {
   void nameParam({String name}) {
     print('Named parameters: $name');
   }
+
+  void optionalParam(int x, [int y]) {
+    print('The value of x and y is: $x and ${y == null ? 'emtpy' : y}');
+  }
 }

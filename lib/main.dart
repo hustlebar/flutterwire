@@ -33,6 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //    person.sayGreetings();
 //    print(person.total(10, 6));
     person.nameParam(name: 'Tham');
+    person.optionalParam(10);
+    person.optionalParam(10, 15);
 
     setState(() {
       _counter++;
