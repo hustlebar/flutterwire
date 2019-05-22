@@ -41,4 +41,8 @@ class Person {
 
     return total;
   }
+
+  void nameParam({String name}) {
+    print('Named parameters: $name}');
+  }
 }

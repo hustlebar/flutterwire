@@ -30,8 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     Person person = new Person();
-    person.sayGreetings();
-    print(person.total(10, 6));
+//    person.sayGreetings();
+//    print(person.total(10, 6));
+    person.nameParam(name: 'Tham');
 
     setState(() {
       _counter++;
