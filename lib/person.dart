@@ -43,6 +43,6 @@ class Person {
   }
 
   void nameParam({String name}) {
-    print('Named parameters: $name}');
+    print('Named parameters: $name');
   }
 }
