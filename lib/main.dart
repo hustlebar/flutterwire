@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'person.dart';
+import 'animal.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,6 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
     person.nameParam(name: 'Tham');
     person.optionalParam(10);
     person.optionalParam(10, 15);
+
+    Animal animal = new Animal('Suki', 'Cat');
 
     setState(() {
       _counter++;
