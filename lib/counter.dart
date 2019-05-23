@@ -17,21 +17,23 @@ class _CounterState extends State<Counter> {
       child: Column(
         children: <Widget>[
           Text('Hello $_counter'),
-          Row(
-            children: <Widget>[
-              RaisedButton(
-                child: Text('Increment'),
-                onPressed: _increment,
-              ),
-              RaisedButton(
-                child: Text('Decrement'),
-                onPressed: _decrement,
-              ),
-              RaisedButton(
-                child: Text('Normalize'),
-                onPressed: _normalize,
-              ),
-            ],
+          Center(
+            child: Row(
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Increment'),
+                  onPressed: _increment,
+                ),
+                RaisedButton(
+                  child: Text('Decrement'),
+                  onPressed: _decrement,
+                ),
+                RaisedButton(
+                  child: Text('Normalize'),
+                  onPressed: _normalize,
+                ),
+              ],
+            ),
           )
         ],
       ),
