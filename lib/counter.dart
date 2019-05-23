@@ -17,9 +17,21 @@ class _CounterState extends State<Counter> {
       child: Column(
         children: <Widget>[
           Text('Hello $_counter'),
-          FlatButton(
-            child: Text('Click'),
-            onPressed: _onPressed,
+          Row(
+            children: <Widget>[
+              RaisedButton(
+                child: Text('Increment'),
+                onPressed: _increment,
+              ),
+              RaisedButton(
+                child: Text('Decrement'),
+                onPressed: _decrement,
+              ),
+              RaisedButton(
+                child: Text('Normalize'),
+                onPressed: _normalize,
+              ),
+            ],
           )
         ],
       ),
@@ -32,10 +44,23 @@ class _CounterState extends State<Counter> {
     print('Init state is called');
   }
 
-  void _onPressed() {
-    print('_onPressed called');
+  void _increment() {
+    print('_increment called');
     setState(() {
       _counter++;
+    });
+  }
+
+  void _decrement() {
+    print('_decrement called');
+    setState(() {
+      _counter--;
+    });
+  }
+
+  void _normalize() {
+    setState(() {
+      _counter = 0;
     });
   }
 }
