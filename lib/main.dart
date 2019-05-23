@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'person.dart';
 import 'animal.dart';
 import 'animal_type.dart';
+import 'button.dart';
 
 void main() => runApp(MyApp());
 
@@ -66,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            FwButton('Tham'),
           ],
         ),
       ),
