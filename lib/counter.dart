@@ -26,6 +26,12 @@ class _CounterState extends State<Counter> {
     );
   }
 
+  @override
+  void initState() {
+    super.initState();
+    print('Init state is called');
+  }
+
   void _onPressed() {
     print('_onPressed called');
     setState(() {
