@@ -3,6 +3,7 @@ import 'person.dart';
 import 'animal.dart';
 import 'animal_type.dart';
 import 'button.dart';
+import 'counter.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.display1,
             ),
             FwButton('Tham'),
+            Counter()
           ],
         ),
       ),
