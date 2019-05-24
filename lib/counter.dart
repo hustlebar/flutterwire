@@ -22,17 +22,20 @@ class _CounterState extends State<Counter> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 RaisedButton(
-                  child: Text('Increment'),
+                  child: Text('Increment', style: TextStyle(color: Colors.white),),
                   color: Colors.green,
                   onPressed: _increment,
                 ),
                 RaisedButton(
-                  child: Text('Decrement'),
+                  child: Text(
+                    'Decrement',
+                    style: TextStyle(color: Colors.white),
+                  ),
                   color: Colors.red,
                   onPressed: _decrement,
                 ),
                 RaisedButton(
-                  child: Text('Normalize'),
+                  child: Text('Normalize', style: TextStyle(color: Colors.white),),
                   color: Colors.blue,
                   onPressed: _normalize,
                 ),
