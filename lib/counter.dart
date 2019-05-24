@@ -23,14 +23,17 @@ class _CounterState extends State<Counter> {
               children: <Widget>[
                 RaisedButton(
                   child: Text('Increment'),
+                  color: Colors.green,
                   onPressed: _increment,
                 ),
                 RaisedButton(
                   child: Text('Decrement'),
+                  color: Colors.red,
                   onPressed: _decrement,
                 ),
                 RaisedButton(
                   child: Text('Normalize'),
+                  color: Colors.blue,
                   onPressed: _normalize,
                 ),
               ],
