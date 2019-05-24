@@ -19,6 +19,7 @@ class _CounterState extends State<Counter> {
           Text('Hello $_counter'),
           Center(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 RaisedButton(
                   child: Text('Increment'),
