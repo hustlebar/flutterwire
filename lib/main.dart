@@ -69,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.display1,
             ),
             FwButton('Tham'),
-            Counter()
+            Counter(),
+            Image.asset('assets/images/sample.jpg', width: 150.0,)
           ],
         ),
       ),

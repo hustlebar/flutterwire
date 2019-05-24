@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 
 class FwButton extends StatelessWidget {
-  String name;
+  final String name;
   FwButton(this.name);
 
   @override
   Widget build(BuildContext context) {
     return FlatButton(
       child: Text(name),
+      onPressed: _onClicked,
     );
+  }
+
+  void _onClicked() {
+
   }
 }
