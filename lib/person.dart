@@ -20,7 +20,7 @@ class Person {
       print('Hello $greeting');
     }
 
-    print('Another way of for loop');
+    print('Another way of for loop...');
     greetings.forEach((greeting) => print('Hello from $greeting'));
 
     print('Arrow => function');
