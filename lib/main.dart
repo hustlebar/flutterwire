@@ -70,7 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             FwButton('Tham'),
             Counter(),
-            Image.asset('assets/images/sample.jpg', width: 150.0,)
+            Image.asset('assets/images/sample.jpg', width: 150.0,),
+            Icon(
+              Icons.accessible,
+              size: 150.0,
+              color: Colors.amber,
+            )
           ],
         ),
       ),
