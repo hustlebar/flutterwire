@@ -75,6 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.accessible,
               size: 150.0,
               color: Colors.amber,
+            ),
+            Container(
+              child: Icon(
+                Icons.ac_unit,
+                size: 100.0,
+                color: Colors.indigo,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.indigo.withOpacity(0.25)
+              ),
             )
           ],
         ),
