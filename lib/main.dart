@@ -5,6 +5,8 @@ import 'animal_type.dart';
 import 'button.dart';
 import 'counter.dart';
 
+import 'package:flutterwire/weather/weather.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -58,37 +60,38 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have clicked the button this many times...:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            FwButton('Tham'),
-            Counter(),
-            Image.asset('assets/images/sample.jpg', width: 250.0,),
-            Icon(
-              Icons.accessible,
-              size: 150.0,
-              color: Colors.amber,
-            ),
-            Container(
-              child: Icon(
-                Icons.ac_unit,
-                size: 100.0,
-                color: Colors.indigo,
-              ),
-              decoration: BoxDecoration(
-                color: Colors.indigo.withOpacity(0.25),
-                borderRadius: BorderRadius.circular(15.0)
-              ),
-            )
-          ],
-        ),
+        child: Weather(),
+//        child: Column(
+//          mainAxisAlignment: MainAxisAlignment.center,
+//          children: <Widget>[
+//            Text(
+//              'You have clicked the button this many times...:',
+//            ),
+//            Text(
+//              '$_counter',
+//              style: Theme.of(context).textTheme.display1,
+//            ),
+//            FwButton('Tham'),
+//            Counter(),
+//            Image.asset('assets/images/sample.jpg', width: 250.0,),
+//            Icon(
+//              Icons.accessible,
+//              size: 150.0,
+//              color: Colors.amber,
+//            ),
+//            Container(
+//              child: Icon(
+//                Icons.ac_unit,
+//                size: 100.0,
+//                color: Colors.indigo,
+//              ),
+//              decoration: BoxDecoration(
+//                color: Colors.indigo.withOpacity(0.25),
+//                borderRadius: BorderRadius.circular(15.0)
+//              ),
+//            )
+//          ],
+//        ),
       ),
       floatingActionButton: FloatingActionButton(
         key: UniqueKey(),
