@@ -57,8 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(appBarHeight(context)),
+        child: AppBar(
 //        title: Text(widget.title),
+        ),
       ),
 //      backgroundColor: Colors.orange.withRed(200).withAlpha(200),
       body: Center(
@@ -104,5 +107,17 @@ class _MyHomePageState extends State<MyHomePage> {
 //      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
 //      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
+  }
+
+  final double kToolbarHeight = 56.0;
+  double appBarHeight(BuildContext context) {
+    return screenAwareSize(kToolbarHeight, context);
+  }
+
+  final double kBaseHeight = 650.0;
+  double screenAwareSize(double size, BuildContext context) {
+    double drawingHeight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    return size * drawingHeight / kBaseHeight;
   }
 }
