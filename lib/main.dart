@@ -53,6 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Animal kuttiSuki = Animal.fromProps('Kutti Suki', AnimalType.Cat);
     print(kuttiSuki.hashCode);
 
+    print('Size of the screen: ${MediaQuery.of(context).size}');
+
     setState(() {
       _counter++;
     });
