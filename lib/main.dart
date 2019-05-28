@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Wire',
 //      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.deepOrange,
-        accentColor: Colors.deepOrangeAccent,
+        primaryColor: Color(0xFF262A30),
+        accentColor: Color(0xFF2E3139),
 //        primarySwatch: Colors.orange,
       ),
       home: MyHomePage(title: 'Flutter Wire'),
