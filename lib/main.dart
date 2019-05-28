@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+//      backgroundColor: Colors.orange.withRed(200).withAlpha(200),
       body: Center(
         child: Weather(),
 //        child: Column(
@@ -100,6 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+//      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+//      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
