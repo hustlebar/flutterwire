@@ -14,6 +14,10 @@ class _ForecastState extends State<Forecast> with SingleTickerProviderStateMixin
     end: Colors.amber,
   );
 
+  Tween offsetTween = new Tween<Offset>(
+    begin: Offset(0.0, 100.0),
+    end: Offset(150.0, 150.0));
+
   AnimationController _animationController;
 
   @override
@@ -26,6 +30,18 @@ class _ForecastState extends State<Forecast> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return Sun(animation: tween.animate(_animationController));
+    return Stack(
+      children: <Widget>[
+        SlideTransition(
+        position: offsetTween.animate(
+          _animationController.drive(
+            CurveTween(curve: Curves.easeIn),
+            ),
+          ),
+          child: Sun(animation: tween.animate(_animationController),),
+        )
+      ],
+    );
+//    return Sun(animation: tween.animate(_animationController));
   }
 }
