@@ -8,8 +8,19 @@ class Clouds extends AnimatedWidget {
 }
 
 class CloudsPainter extends CustomPainter {
+  final Paint cloudPaint;
+  final bool isRain;
+
+  CloudsPainter({this.cloudPaint, this.isRain});
+
   @override
   void paint(Canvas canvas, Size size) {
+    var rectTop = 110.0;
+    var rectBottom = rectTop + 40.0;
+
+    var leftEdge = size.width / 4;
+    var rightEdge = size.width - 90.0;
+    var center = size.width / 2;
   }
 
   @override
