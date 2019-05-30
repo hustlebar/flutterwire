@@ -21,6 +21,15 @@ class CloudsPainter extends CustomPainter {
     var leftEdge = size.width / 4;
     var rightEdge = size.width - 90.0;
     var center = size.width / 2;
+    
+    Rect cloudBaseRect = Rect.fromPoints(
+      Offset(leftEdge, rectTop),
+      Offset(rightEdge, rectBottom)
+    );
+
+    RRect cloudBase = RRect.fromRectAndRadius(
+      cloudBaseRect, Radius.circular(10.0)
+    );
   }
 
   @override
