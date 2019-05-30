@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../sun.dart';
+import 'package:flutterwire/weather/widgets/sun.dart';
 
 class Forecast extends StatefulWidget {
   @override
@@ -32,14 +32,15 @@ class _ForecastState extends State<Forecast> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        SlideTransition(
-        position: offsetTween.animate(
-          _animationController.drive(
-            CurveTween(curve: Curves.easeIn),
-            ),
-          ),
-          child: Sun(animation: tween.animate(_animationController),),
-        )
+        Sun(animation: tween.animate(_animationController),)
+//        SlideTransition(
+//        position: offsetTween.animate(
+//          _animationController.drive(
+//            CurveTween(curve: Curves.easeIn),
+//            ),
+//          ),
+//          child: Sun(animation: tween.animate(_animationController),),
+//        )
       ],
     );
 //    return Sun(animation: tween.animate(_animationController));
