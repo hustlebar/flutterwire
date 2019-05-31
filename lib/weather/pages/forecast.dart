@@ -16,7 +16,7 @@ class _ForecastState extends State<Forecast> with SingleTickerProviderStateMixin
 
   Tween offsetTween = new Tween<Offset>(
     begin: Offset(0.0, 100.0),
-    end: Offset(150.0, 150.0));
+    end: Offset(150.0, 120.0));
 
   AnimationController _animationController;
 
