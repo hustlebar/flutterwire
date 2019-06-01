@@ -25,7 +25,7 @@ class _ForecastState extends State<Forecast> with SingleTickerProviderStateMixin
     super.initState();
     _animationController = AnimationController(
         duration: Duration(milliseconds: 500), vsync: this);
-    _animationController.forward(from: 1);
+    _animationController.forward(from: 10);
   }
 
   @override
