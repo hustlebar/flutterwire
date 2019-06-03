@@ -7,9 +7,10 @@ class WeatherList extends StatefulWidget {
 
 class WeatherListState extends State<WeatherList> {
   List<City> cities;
-  
+
   @override
   void initState() {
+    cities = new List(10);
     cities.add(City('Chennai', 1));
     cities.add(City('Kovai', 10));
     cities.add(City('Madurai', 21));
@@ -23,8 +24,28 @@ class WeatherListState extends State<WeatherList> {
     return createList(context);
   }
 
-  Text createList(BuildContext context) {
-    return Text('Weather List');
+  Widget createList(BuildContext context) {
+    _initCities();
+    
+    return Expanded(
+      child: ListView.builder(
+        itemCount: cities.length,
+        itemBuilder: (BuildContext context, int index) {
+          City city = cities[index];
+          return ListTile(
+            title: Text(city.name),
+          );
+        }
+      ),
+    );
+  }
+
+  void _initCities() {
+    cities = new List(10);
+    cities.add(City('Chennai', 1));
+    cities.add(City('Kovai', 10));
+    cities.add(City('Madurai', 21));
+    cities.add(City('Pondy', 11));
   }
 }
 
