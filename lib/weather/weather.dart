@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/forecast.dart';
 import 'widgets/weather_table.dart';
+import 'widgets/weather_tab.dart';
 
 class Weather extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class Weather extends StatelessWidget {
 
     return Container(
 //      child: Forecast(),
-      child: WeatherTable(),
+//      child: WeatherTable(),
+      child: WeatherTabBar(startIndex: 0,),
     );
   }
 }
