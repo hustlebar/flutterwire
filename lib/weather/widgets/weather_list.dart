@@ -16,6 +16,7 @@ class WeatherListState extends State<WeatherList> {
     cities.add(City('Madurai', 21));
     cities.add(City('Pondy', 11));
     cities.add(City('Trichy', 18));
+    cities.add(City('Nellai', 19));
 
     super.initState();
   }
