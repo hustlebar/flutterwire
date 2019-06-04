@@ -27,7 +27,7 @@ class WeatherListState extends State<WeatherList> {
   }
 
   Widget createList(BuildContext context) {
-//    _initCities();
+//    return ListView.separated(itemBuilder: null, separatorBuilder: null, itemCount: null)
 
     return Expanded(
       child: ListView.builder(
