@@ -10,8 +10,14 @@ class WeatherGesture extends StatelessWidget {
     return GestureDetector(
       onDoubleTap: _onDoubleTap,
       onTap: _onTap,
+      onTapUp: _onTapUp,
       child: Text('Gesture Text'),
     );
+  }
+
+  void _onTapUp(TapUpDetails _details) {
+    print('OnTapUp is called');
+    print(_details.globalPosition.direction);
   }
 
   void _onTap() {
