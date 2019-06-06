@@ -35,6 +35,7 @@ class LoginFormState extends State<LoginForm> {
           labelText: 'Password',
         ),
         obscureText: true,
+        autovalidate: true,
       ),
     );
   }
@@ -48,6 +49,13 @@ class LoginFormState extends State<LoginForm> {
           helperText: 'Required',
           labelText: 'Email'
         ),
+        autovalidate: true,
+        validator: (String val) {
+          if (val.isEmpty) {
+            return "Field can't be left blank";
+          }
+        },
+        onSaved: (String value) => print('Value $value'),
       ),
     );
   }
