@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 //import 'widgets/weather_tab.dart';
 
 //import 'widgets/weather_list.dart';
-import 'widgets/weather_gesture.dart';
+//import 'widgets/weather_gesture.dart';
+import 'widgets/login.dart';
 
 class Weather extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        WeatherGesture()
-      ],
+    return Center(
+      child: LoginForm(),
     );
   }
 }
