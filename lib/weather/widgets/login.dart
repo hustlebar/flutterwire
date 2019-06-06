@@ -22,15 +22,17 @@ class LoginFormState extends State<LoginForm> {
           _passwordField,
           RaisedButton(
             child: Text('Login'),
-            onPressed: _onPressed,
+            onPressed: () => _onPressed(context),
           )
         ],
       ),
     );
   }
 
-  void _onPressed() {
+  void _onPressed(BuildContext ctx) {
     print('Enter onPressed');
+    FormState formState = Form.of(ctx);
+    formState.save();
   }
 
   Widget get _passwordField {
