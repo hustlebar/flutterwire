@@ -19,10 +19,18 @@ class LoginFormState extends State<LoginForm> {
       child: Column(
         children: <Widget>[
           _emailField,
-          _passwordField
+          _passwordField,
+          RaisedButton(
+            child: Text('Login'),
+            onPressed: _onPressed,
+          )
         ],
       ),
     );
+  }
+
+  void _onPressed() {
+    print('Enter onPressed');
   }
 
   Widget get _passwordField {
