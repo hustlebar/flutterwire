@@ -11,7 +11,7 @@ class WeatherGesture extends StatelessWidget {
       onDoubleTap: _onDoubleTap,
       onTap: _onTap,
       onTapUp: _onTapUp,
-      child: Text('Gesture Text...'),
+      child: Text('Gesture Text'),
     );
   }
 
