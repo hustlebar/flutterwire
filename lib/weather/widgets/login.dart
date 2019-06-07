@@ -49,7 +49,7 @@ class LoginFormState extends State<LoginForm> {
           labelText: 'Password',
         ),
         obscureText: true,
-        autovalidate: true,
+//        autovalidate: true,
         validator: (value) {
           if (value.isEmpty) {
             return 'Password should not be empty';
@@ -68,7 +68,7 @@ class LoginFormState extends State<LoginForm> {
           helperText: 'Required',
           labelText: 'Email'
         ),
-        autovalidate: true,
+//        autovalidate: true,
         validator: (value) {
           if (value.isEmpty) {
             return 'Email should not be empty.';
