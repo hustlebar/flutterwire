@@ -6,7 +6,7 @@ class LoginForm extends StatefulWidget {
 }
 
 class LoginFormState extends State<LoginForm> {
-  final GlobalKey<FormState> _globalKey = new GlobalKey();
+  final GlobalKey<FormState> _globalKey = new GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +22,20 @@ class LoginFormState extends State<LoginForm> {
           _passwordField,
           RaisedButton(
             child: Text('Login'),
-            onPressed: () => _onPressed(context),
+            onPressed: () => _onPressed(_globalKey),
           )
         ],
       ),
     );
   }
 
-  void _onPressed(BuildContext ctx) {
+  void _onPressed(GlobalKey<FormState> formKey) {
     print('Enter onPressed');
-    FormState formState = Form.of(ctx);
-    formState.save();
+    if (formKey.currentState.validate()) {
+      formKey.currentState.save();
+    }
+//    FormState formState = Form.of(ctx);
+//    formState.save();
   }
 
   Widget get _passwordField {
@@ -62,10 +65,10 @@ class LoginFormState extends State<LoginForm> {
         autovalidate: true,
         validator: (String val) {
           if (val.isEmpty) {
-            return "Field can't be left blank";
+            return "Email should not be empty";
           }
         },
-        onSaved: (String value) => print('Value $value'),
+//        onSaved: (String value) => print('Value $value'),
       ),
     );
   }
