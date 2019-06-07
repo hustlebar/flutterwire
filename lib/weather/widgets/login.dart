@@ -31,6 +31,7 @@ class LoginFormState extends State<LoginForm> {
 
   void _onPressed(GlobalKey<FormState> formKey) {
     print('Enter onPressed');
+    print('Is the form validated: ${formKey.currentState.validate()}');
     if (formKey.currentState.validate()) {
       formKey.currentState.save();
     }
@@ -49,6 +50,11 @@ class LoginFormState extends State<LoginForm> {
         ),
         obscureText: true,
         autovalidate: true,
+        validator: (value) {
+          if (value.isEmpty) {
+            return 'Password should not be empty';
+          }
+        },
       ),
     );
   }
@@ -63,12 +69,11 @@ class LoginFormState extends State<LoginForm> {
           labelText: 'Email'
         ),
         autovalidate: true,
-        validator: (String val) {
-          if (val.isEmpty) {
-            return "Email should not be empty";
+        validator: (value) {
+          if (value.isEmpty) {
+            return 'Email should not be empty.';
           }
         },
-//        onSaved: (String value) => print('Value $value'),
       ),
     );
   }
