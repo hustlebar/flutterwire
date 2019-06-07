@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwire/weather/models/user.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -7,6 +8,7 @@ class LoginForm extends StatefulWidget {
 
 class LoginFormState extends State<LoginForm> {
   final GlobalKey<FormState> _globalKey = new GlobalKey<FormState>();
+  final User user = new User();
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class LoginFormState extends State<LoginForm> {
   void _onPressed(GlobalKey<FormState> formKey) {
     print('Enter onPressed');
     print('Is the form validated: ${formKey.currentState.validate()}');
+    print('User with info: $user');
     if (formKey.currentState.validate()) {
       formKey.currentState.save();
     }
@@ -55,6 +58,9 @@ class LoginFormState extends State<LoginForm> {
             return 'Password should not be empty';
           }
         },
+        onSaved: (value) {
+          user.password = value;
+        },
       ),
     );
   }
@@ -73,6 +79,9 @@ class LoginFormState extends State<LoginForm> {
           if (value.isEmpty) {
             return 'Email should not be empty.';
           }
+        },
+        onSaved: (value) {
+          user.email = value;
         },
       ),
     );
