@@ -22,12 +22,23 @@ class LoginFormState extends State<LoginForm> {
         children: <Widget>[
           _emailField,
           _passwordField,
-          RaisedButton(
-            child: Text('Login'),
-            onPressed: () => _onPressed(_globalKey),
-          )
+          _loginBtn,
+          _cancelBtn
         ],
       ),
+    );
+  }
+
+  Widget get _cancelBtn {
+    return RaisedButton(
+      child: Text('Cancel'),
+    );
+  }
+
+  Widget get _loginBtn {
+    return RaisedButton(
+      child: Text('Login'),
+      onPressed: () => _onPressed(_globalKey),
     );
   }
 
