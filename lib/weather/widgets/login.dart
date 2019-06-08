@@ -77,7 +77,7 @@ class LoginFormState extends State<LoginForm> {
 //        autovalidate: true,
         validator: (value) {
           if (value.isEmpty) {
-            return 'Email should not be empty.';
+            return 'Email should not be empty...';
           }
         },
         onSaved: (value) {
