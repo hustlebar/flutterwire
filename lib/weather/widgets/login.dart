@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutterwire/weather/models/user.dart';
 
@@ -26,12 +28,23 @@ class LoginFormState extends State<LoginForm> {
           _cancelBtn
         ],
       ),
+      onWillPop: _onWillPop,
     );
+  }
+
+  Future<bool> _onWillPop() {
+    return Future<bool>.value(true);
+  }
+
+  void _onCancel() {
+    print('Enters onCancel');
+
   }
 
   Widget get _cancelBtn {
     return RaisedButton(
       child: Text('Cancel'),
+      onPressed: _onCancel,
     );
   }
 
