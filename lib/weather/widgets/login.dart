@@ -33,6 +33,7 @@ class LoginFormState extends State<LoginForm> {
   }
 
   Future<bool> _onWillPop() {
+    print('Enters _onWillPop()');
     return Future<bool>.value(true);
   }
 
