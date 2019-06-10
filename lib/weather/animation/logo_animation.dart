@@ -9,6 +9,9 @@ class LogoAnimationWidget extends StatefulWidget {
 
 class LogoAnimationState extends State<LogoAnimationWidget>
     with SingleTickerProviderStateMixin {
+  Animation<double> animation;
+  AnimationController _controller;
+
   @override
   Widget build(BuildContext context) {
     return _build;
@@ -17,9 +20,28 @@ class LogoAnimationState extends State<LogoAnimationWidget>
   Widget get _build {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.0),
-      height: 100,
-      width: 100,
+      height: animation.value,
+      width: animation.value,
       child: FlutterLogo(),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: Duration(seconds: 2),
+      vsync: this
+    );
+
+    animation = Tween<double>(begin: 0, end: 200).animate(_controller)
+      ..addListener(() {
+        setState(() {
+
+        });
+      });
+
+    _controller.forward();
   }
 }
