@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class LogoAnimationWidget extends StatefulWidget {
@@ -42,6 +44,10 @@ class LogoAnimationState extends State<LogoAnimationWidget>
         });
       });
 
-    _controller.forward();
+    startAnimation();
+  }
+
+  Future<void> startAnimation() async {
+    await _controller.forward();
   }
 }
