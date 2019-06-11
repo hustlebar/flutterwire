@@ -11,7 +11,8 @@ class LogoAnimationWidget extends StatefulWidget {
 
 class LogoAnimationState extends State<LogoAnimationWidget>
     with SingleTickerProviderStateMixin {
-  Animation<double> animation;
+  Animation<double> _sizeAnimation;
+  Animation<Color> _colorAnimation;
   AnimationController _controller;
 
   @override
@@ -22,8 +23,9 @@ class LogoAnimationState extends State<LogoAnimationWidget>
   Widget get _build {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.0),
-      height: animation.value,
-      width: animation.value,
+      height: _sizeAnimation.value,
+      width: _sizeAnimation.value,
+      color: _colorAnimation.value,
       child: FlutterLogo(),
     );
   }
@@ -37,7 +39,15 @@ class LogoAnimationState extends State<LogoAnimationWidget>
       vsync: this
     );
 
-    animation = Tween<double>(begin: 0, end: 200).animate(_controller)
+    _sizeAnimation = Tween<double>(begin: 0, end: 200).animate(_controller)
+      ..addListener(() {
+        setState(() {
+
+        });
+      });
+
+    _colorAnimation = ColorTween(begin: Colors.yellow, end: Colors.red)
+      .animate(_controller)
       ..addListener(() {
         setState(() {
 
