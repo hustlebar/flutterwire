@@ -34,10 +34,7 @@ class LogoAnimationState extends State<LogoAnimationWidget>
   void initState() {
     super.initState();
 
-    _controller = AnimationController(
-      duration: Duration(seconds: 2),
-      vsync: this
-    );
+    _buildAnimationController();
 
     _sizeAnimation = Tween<double>(begin: 0, end: 200).animate(_controller)
       ..addListener(() {
@@ -55,6 +52,14 @@ class LogoAnimationState extends State<LogoAnimationWidget>
       });
 
     startAnimation();
+  }
+
+  void _buildAnimationController() {
+    _controller?.dispose();
+    _controller = AnimationController(
+        duration: Duration(seconds: 2),
+        vsync: this
+    );
   }
 
   Future<void> startAnimation() async {
