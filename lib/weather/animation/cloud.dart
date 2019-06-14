@@ -8,10 +8,40 @@ class Cloud extends StatefulWidget {
   }
 }
 
-class CloudState extends State<Cloud> {
+class CloudState extends State<Cloud> with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Tween<Offset> _positionAnimation;
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(vsync: this);
+    _initAnimation();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return _build;
+    return _slideTransition;
+  }
+
+  void _initAnimation() {
+    _positionAnimation = Tween(
+      begin: Offset(100, 150),
+      end: Offset(300, 350)
+    );
+  }
+
+  Widget get _slideTransition {
+    return SlideTransition(
+      position: _positionAnimation.animate(
+        _controller.drive(
+          CurveTween(curve: Curves.bounceIn)
+        )
+      ),
+      child: _build,
+    );
   }
 
   Widget get _build {
