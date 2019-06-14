@@ -73,3 +73,4 @@ ios/Runner.xcodeproj/project.pbxproj
 android/app/src/main/gen/com/hustlebar/flutterwire/Manifest.java
 android/app/src/main/gen/com/hustlebar/flutterwire/R.java
 ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+ios/Runner.xcodeproj/project.pbxproj

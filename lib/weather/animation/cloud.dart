@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'cloud_painter.dart';
 
@@ -17,7 +19,10 @@ class CloudState extends State<Cloud> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _controller = AnimationController(vsync: this);
+    _controller = AnimationController(
+      duration: Duration(seconds: 2),
+      vsync: this
+    );
     _initAnimation();
   }
 
@@ -31,6 +36,12 @@ class CloudState extends State<Cloud> with SingleTickerProviderStateMixin {
       begin: Offset(100, 150),
       end: Offset(300, 350)
     );
+
+    startAnimation();
+  }
+
+  Future<void> startAnimation() async {
+    await _controller.forward();
   }
 
   Widget get _slideTransition {
