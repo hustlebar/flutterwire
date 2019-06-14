@@ -10,7 +10,7 @@ class CloudPainter extends CustomPainter {
     var height = size.height / 2;
 
     var _rect = Rect.fromPoints(
-      Offset(160, height + 20),
+      Offset(160, height - 30),
       Offset(450, height + 70)
     );
 
