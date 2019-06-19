@@ -5,8 +5,9 @@ import 'animal_type.dart';
 import 'button.dart';
 import 'counter.dart';
 
-import 'package:flutterwire/weather/weather.dart';
+//import 'package:flutterwire/weather/weather.dart';
 import 'package:flutterwire/marketplace/marketplace.dart';
+import 'package:flutterwire/marketplace/util/marketplace_route.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.orangeAccent
       ),
       home: MyHomePage(title: 'Flutter Wire'),
+      routes: {
+        MarketPlaceRoute.home: (context) => 
+      },
     );
   }
 }
