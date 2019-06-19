@@ -6,6 +6,7 @@ import 'button.dart';
 import 'counter.dart';
 
 import 'package:flutterwire/weather/weather.dart';
+import 'package:flutterwire/marketplace/marketplace.dart';
 
 void main() => runApp(MyApp());
 
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 //      backgroundColor: Colors.orange.withRed(200).withAlpha(200),
       body: Center(
-        child: Weather(),
+        child: MarketPlace(),
 //        child: Column(
 //          mainAxisAlignment: MainAxisAlignment.center,
 //          children: <Widget>[

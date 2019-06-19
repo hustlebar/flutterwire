@@ -3,6 +3,6 @@ import 'package:flutter/material.dart';
 class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return null;
+    return Text('detail');
   }
 }
