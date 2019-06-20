@@ -5,4 +5,14 @@ class ProductDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text('detail');
   }
+
+  Widget _build() {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Product details'),
+      ),
+
+      body: Text('Details page'),
+    );
+  }
 }

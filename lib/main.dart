@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.orange,
         accentColor: Colors.orangeAccent
       ),
-      home: MyHomePage(title: 'Flutter Wire'),
+//      home: MyHomePage(title: 'Flutter Wire'),
       routes: {
         MarketPlaceRoute.home: (context) => Gallery(),
         MarketPlaceRoute.detail: (context) => ProductDetail()
