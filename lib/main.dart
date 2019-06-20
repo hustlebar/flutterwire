@@ -8,6 +8,8 @@ import 'counter.dart';
 //import 'package:flutterwire/weather/weather.dart';
 import 'package:flutterwire/marketplace/marketplace.dart';
 import 'package:flutterwire/marketplace/util/marketplace_route.dart';
+import 'package:flutterwire/marketplace/pages/gallery.dart';
+import 'package:flutterwire/marketplace/pages/detail.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +28,8 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Wire'),
       routes: {
-        MarketPlaceRoute.home: (context) => 
+        MarketPlaceRoute.home: (context) => Gallery(),
+        MarketPlaceRoute.detail: (context) => ProductDetail()
       },
     );
   }
