@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwire/marketplace/util/marketplace_route.dart';
 
 class MarketplaceHome extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class MarketplaceHome extends StatelessWidget {
       crossAxisCount: 2,
       children: <Widget>[
         GestureDetector(
-          onTap: _onTapGallery,
+          onTap: () => _onTapGallery(context),
           child: Icon(
             Icons.smartphone,
             size: 100,
@@ -42,7 +43,8 @@ class MarketplaceHome extends StatelessWidget {
     );
   }
 
-  void _onTapGallery() {
+  void _onTapGallery(BuildContext context) {
     print('Enters _onTapGallery');
+    Navigator.pushNamed(context, MarketPlaceRoute.gallery);
   }
 }
