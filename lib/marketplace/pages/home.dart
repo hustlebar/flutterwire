@@ -22,9 +22,27 @@ class MarketplaceHome extends StatelessWidget {
       crossAxisSpacing: 10.0,
       crossAxisCount: 2,
       children: <Widget>[
-        Icon(Icons.smartphone, size: 100, color: Theme.of(context).colorScheme.primary,),
-        Icon(Icons.map, size: 100, color: Theme.of(context).colorScheme.primary,)
+        GestureDetector(
+          onTap: _onTapGallery,
+          child: Icon(
+            Icons.smartphone,
+            size: 100,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Icon(
+            Icons.map,
+            size: 100,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
       ],
     );
+  }
+
+  void _onTapGallery() {
+    print('Enters _onTapGallery');
   }
 }
