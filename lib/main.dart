@@ -10,6 +10,7 @@ import 'package:flutterwire/marketplace/marketplace.dart';
 import 'package:flutterwire/marketplace/util/marketplace_route.dart';
 import 'package:flutterwire/marketplace/pages/gallery.dart';
 import 'package:flutterwire/marketplace/pages/detail.dart';
+import 'package:flutterwire/marketplace/pages/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       ),
 //      home: MyHomePage(title: 'Flutter Wire'),
       routes: {
-        MarketPlaceRoute.home: (context) => Gallery(),
+        MarketPlaceRoute.home: (context) => MarketplaceHome(),
+        MarketPlaceRoute.gallery: (context) => Gallery(),
         MarketPlaceRoute.detail: (context) => ProductDetail()
       },
     );
