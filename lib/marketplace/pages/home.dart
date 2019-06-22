@@ -32,7 +32,7 @@ class MarketplaceHome extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => _onTapDetail(context),
           child: Icon(
             Icons.map,
             size: 100,
@@ -41,6 +41,11 @@ class MarketplaceHome extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _onTapDetail(BuildContext context) {
+    print('Enters _onTapDetail');
+    Navigator.pushNamed(context, MarketPlaceRoute.detail);
   }
 
   void _onTapGallery(BuildContext context) {
