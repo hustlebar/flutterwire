@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwire/marketplace/util/marketplace_route.dart';
+import 'package:flutterwire/marketplace/model/product.dart';
 
 class MarketplaceHome extends StatelessWidget {
   @override
@@ -45,7 +46,14 @@ class MarketplaceHome extends StatelessWidget {
 
   void _onTapDetail(BuildContext context) {
     print('Enters _onTapDetail');
-    Navigator.pushNamed(context, MarketPlaceRoute.detail);
+
+    Navigator.pushNamed(
+      context,
+      MarketPlaceRoute.detail,
+      arguments: Product(
+        '1', 'Television'
+      )
+    );
   }
 
   void _onTapGallery(BuildContext context) {
