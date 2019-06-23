@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwire/marketplace/model/product.dart';
 
 class ProductDetail extends StatelessWidget {
   @override
@@ -7,6 +8,9 @@ class ProductDetail extends StatelessWidget {
   }
 
   Widget _build(BuildContext context) {
+    print('Enters ProductDetails._build()');
+    final Product product = ModalRoute.of(context).settings.arguments;
+//    print('Product through route ${product.title} and ${product.id}');
     return Scaffold(
       appBar: AppBar(
         title: Text('Product details'),

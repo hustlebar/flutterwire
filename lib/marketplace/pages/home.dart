@@ -51,7 +51,7 @@ class MarketplaceHome extends StatelessWidget {
       context,
       MarketPlaceRoute.detail,
       arguments: Product(
-        '1', 'Television'
+        '1', 'Computer'
       )
     );
   }

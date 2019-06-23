@@ -7,15 +7,12 @@ class Gallery extends StatelessWidget {
   }
 
   Widget _build() {
+    print('Gallery._build() called');
     return Scaffold(
       appBar: AppBar(
         title: Text('Gallery'),
       ),
       body: Text('Gallery'),
     );
-  }
-
-  Widget get _child {
-
   }
 }
