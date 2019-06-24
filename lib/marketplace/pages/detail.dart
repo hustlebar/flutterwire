@@ -10,7 +10,7 @@ class ProductDetail extends StatelessWidget {
   Widget _build(BuildContext context) {
     print('Enters ProductDetails._build()');
     final Product product = ModalRoute.of(context).settings.arguments;
-//    print('Product through route ${product.title} and ${product.id}');
+    print('Product through route ${product.title} and ${product.id}');
     return Scaffold(
       appBar: AppBar(
         title: Text('Product details'),
