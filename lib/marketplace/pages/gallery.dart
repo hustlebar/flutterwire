@@ -23,7 +23,7 @@ class Gallery extends StatelessWidget {
         (i) => Product('$i', 'Product title $i')
     );
     
-    ListView.builder(
+    return ListView.builder(
       itemCount: products.length,
       itemBuilder: (context, index) {
         return ListTile(
