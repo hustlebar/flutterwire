@@ -20,7 +20,7 @@ class Gallery extends StatelessWidget {
   Widget _buildProducts(BuildContext context) {
     final List<Product> products = List<Product>.generate(
         10,
-        (i) => Product('$i', 'Product title $i')
+        (i) => Product('$i', 'Product $i')
     );
     
     return ListView.builder(
