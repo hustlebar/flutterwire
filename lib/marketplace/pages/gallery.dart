@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwire/marketplace/model/product.dart';
+import 'package:flutterwire/marketplace/pages/detail.dart';
 
 class Gallery extends StatelessWidget {
   @override
@@ -28,8 +29,18 @@ class Gallery extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           title: Text(products[index].title),
+          onTap: () => _onTap(context, products[index]),
         );
       }
+    );
+  }
+
+  void _onTap(BuildContext context, Product product) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProductDetail(product: product)
+      )
     );
   }
 }
