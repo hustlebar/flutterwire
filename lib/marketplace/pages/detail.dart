@@ -11,6 +11,7 @@ class ProductDetail extends StatelessWidget {
   }
 
   Widget _build(BuildContext context) {
+    print('Enters ProductDetail._build()');
     return Scaffold(
       appBar: AppBar(
         title: Text(product.title),
