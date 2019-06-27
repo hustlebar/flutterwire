@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MarketPlaceRoute.home: (context) => MarketplaceHome(),
         MarketPlaceRoute.gallery: (context) => Gallery(),
-        MarketPlaceRoute.detail: (context) => ProductDetail()
+//        MarketPlaceRoute.detail: (context) => ProductDetail()
       },
     );
   }
