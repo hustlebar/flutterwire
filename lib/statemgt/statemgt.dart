@@ -19,4 +19,9 @@ class StateMgt extends StatelessWidget {
       ),
     );
   }
+
+  static StateMgt of(BuildContext context) {
+//    return context.inherited
+    return null;
+  }
 }
