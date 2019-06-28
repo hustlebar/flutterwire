@@ -12,6 +12,8 @@ import 'package:flutterwire/marketplace/pages/gallery.dart';
 import 'package:flutterwire/marketplace/pages/detail.dart';
 import 'package:flutterwire/marketplace/pages/home.dart';
 
+import 'package:flutterwire/statemgt/statemgt.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -27,12 +29,13 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.orange,
         accentColor: Colors.orangeAccent
       ),
+      home: StateMgt(),
 //      home: MyHomePage(title: 'Flutter Wire'),
-      routes: {
-        MarketPlaceRoute.home: (context) => MarketplaceHome(),
-        MarketPlaceRoute.gallery: (context) => Gallery(),
-//        MarketPlaceRoute.detail: (context) => ProductDetail()
-      },
+//      routes: {
+//        MarketPlaceRoute.home: (context) => MarketplaceHome(),
+//        MarketPlaceRoute.gallery: (context) => Gallery(),
+////        MarketPlaceRoute.detail: (context) => ProductDetail()
+//      },
     );
   }
 }
