@@ -13,6 +13,13 @@ class _ItemCounterState extends State<ItemCounter> {
   int _count = 0;
   _ItemCounterState(this._name);
 
+
+  @override
+  void initState() {
+    _count = 1;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return _buildUi(context);
