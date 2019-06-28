@@ -5,10 +5,14 @@ class ItemCounter extends StatefulWidget {
   ItemCounter({this.name});
 
   @override
-  _ItemCounterState createState() => _ItemCounterState();
+  _ItemCounterState createState() => _ItemCounterState(name);
 }
 
 class _ItemCounterState extends State<ItemCounter> {
+  String _name;
+  int _count = 0;
+  _ItemCounterState(this._name);
+
   @override
   Widget build(BuildContext context) {
     return _buildUi(context);
@@ -18,7 +22,7 @@ class _ItemCounterState extends State<ItemCounter> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text('Child text'),
+        Text(_name + ' $_count'),
         RaisedButton(
           child: Text('Counter'),
           onPressed: _onPressed,
@@ -29,5 +33,8 @@ class _ItemCounterState extends State<ItemCounter> {
 
   void _onPressed() {
     print('Enters _onPressed');
+    setState(() {
+      _count++;
+    });
   }
 }
