@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'item_counter.dart';
 
 class StateMgt extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class StateMgt extends StatelessWidget {
       ),
       body: Container(
         child: Center(
-          child: Text('State management module'),
+          child: ItemCounter(name: 'Counter',),
         ),
       ),
     );
