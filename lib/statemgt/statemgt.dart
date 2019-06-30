@@ -10,7 +10,7 @@ class StateMgt extends StatelessWidget {
   Widget _build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('State Managements'),
+        title: Text('State Management'),
       ),
       body: Container(
         child: Center(
