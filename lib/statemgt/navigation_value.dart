@@ -32,6 +32,10 @@ class SelectionButton extends StatelessWidget {
       ctx,
       MaterialPageRoute(builder: (ctx) => SelectionScreen())
     );
+    
+    Scaffold.of(ctx)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text('$result')));
   }
 }
 
@@ -45,6 +49,24 @@ class SelectionScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Pick an option'),
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Yep!'),
+              onPressed: () {
+                Navigator.pop(ctx, 'Yep!');
+              },
+            ),
+            RaisedButton(
+              child: Text('Nope'),
+              onPressed: () {
+                Navigator.pop(ctx, 'Nope');
+              },
+            )
+          ],
+        ),
       ),
     );
   }
