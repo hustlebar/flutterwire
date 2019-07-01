@@ -11,6 +11,9 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Navigation with return'),
       ),
+      body: Center(
+        child: SelectionButton(),
+      )
     );
   }
 }
@@ -18,13 +21,31 @@ class HomeScreen extends StatelessWidget {
 class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return null;
+    return RaisedButton(
+      onPressed: () => _onSelection(context),
+      child: Text('Select an option'),
+    );
+  }
+
+  void _onSelection(BuildContext ctx) async {
+    final result = await Navigator.push(
+      ctx,
+      MaterialPageRoute(builder: (ctx) => SelectionScreen())
+    );
   }
 }
 
 class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return null;
+    return _buildSelection(context);
+  }
+
+  Widget _buildSelection(BuildContext ctx) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Pick an option'),
+      ),
+    );
   }
 }
