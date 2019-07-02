@@ -12,10 +12,33 @@ class HomeScreen extends StatelessWidget {
         title: Text('Navigation with return'),
       ),
       body: Center(
-        child: SelectionButton(),
+        child: Column(
+          children: <Widget>[
+            SelectionButton(),
+            _asyncButton()
+          ],
+        ),
       )
     );
   }
+}
+
+Widget _asyncButton() {
+  return RaisedButton(
+    child: Text('Async button'),
+    onPressed: _onAsync,
+  );
+}
+
+void _onAsync() async {
+  await _onFuture('Hello');
+}
+
+Future<String> _onFuture(String value) {
+  return Future.delayed(
+    Duration(minutes: 1)
+  )
+  .then((onValue) => value + '1');
 }
 
 class SelectionButton extends StatelessWidget {
