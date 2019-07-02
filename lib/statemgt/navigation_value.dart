@@ -35,10 +35,9 @@ void _onAsync() async {
 }
 
 Future<String> _onFuture(String value) {
-  return Future.delayed(
-    Duration(seconds: 10)
-  )
-  .then((onValue) => value + '1');
+  return Future.delayed(Duration(seconds: 10))
+  .then((onValue) => value + '1')
+  .catchError((error) => print(error));
 }
 
 class SelectionButton extends StatelessWidget {
