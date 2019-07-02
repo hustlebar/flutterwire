@@ -31,12 +31,12 @@ Widget _asyncButton() {
 }
 
 void _onAsync() async {
-  await _onFuture('Hello');
+  await _onFuture('Hello').then((onValue) => print('Value from future $onValue'));
 }
 
 Future<String> _onFuture(String value) {
   return Future.delayed(
-    Duration(minutes: 1)
+    Duration(seconds: 10)
   )
   .then((onValue) => value + '1');
 }
