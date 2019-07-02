@@ -23,7 +23,7 @@ class SelectionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: () => _onSelection(context),
-      child: Text('Select an option'),
+      child: Text('Select your choice...'),
     );
   }
 
