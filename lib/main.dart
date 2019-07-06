@@ -15,6 +15,8 @@ import 'package:flutterwire/marketplace/pages/home.dart';
 import 'package:flutterwire/statemgt/statemgt.dart';
 import 'package:flutterwire/statemgt/navigation_value.dart';
 
+import 'package:flutterwire/stream/stream.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.orange,
         accentColor: Colors.orangeAccent
       ),
-      home: HomeScreen(),
+      home: StreamApp(),
 //      home: MyHomePage(title: 'Flutter Wire'),
 //      routes: {
 //        MarketPlaceRoute.home: (context) => MarketplaceHome(),
