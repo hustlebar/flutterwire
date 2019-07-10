@@ -14,7 +14,7 @@ class StateMgt extends StatelessWidget {
       ),
       body: Container(
         child: Center(
-          child: ItemCounter(name: 'Counter...',),
+          child: ItemCounter(name: 'Counter.',),
         ),
       ),
     );
