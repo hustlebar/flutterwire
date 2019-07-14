@@ -9,7 +9,7 @@ class StreamApp extends StatelessWidget {
   Widget _build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stream App'),
+        title: Text('Stream App.'),
       ),
 
       body: _buildBody(context),
