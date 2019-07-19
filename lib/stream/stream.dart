@@ -29,5 +29,12 @@ class StreamApp extends StatelessWidget {
 
   void _onPressed() {
     print('Enters StreamApp._onPressed');
+    futurePrint(Duration(microseconds: 5000), "I am first").then((onValue) => print(onValue));
+    futurePrint(Duration(microseconds: 20), "I am Second").then((onValue) => print(onValue));
+    futurePrint(Duration(microseconds: 1000), "I am Third").then((onValue) => print(onValue));
+  }
+
+  Future futurePrint(Duration duration, String message) {
+    return Future.delayed(duration).then((onValue) => message);
   }
 }
