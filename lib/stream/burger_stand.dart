@@ -11,6 +11,10 @@ class BurgerStand {
       cook.prepareOrder(onOrder);
     });
   }
+
+  void order(String orderItem) {
+    _controller.add(orderItem);
+  }
 }
 
 class Cook {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'burger_stand.dart';
 
 class StreamApp extends StatelessWidget {
   @override
@@ -17,14 +18,29 @@ class StreamApp extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context) {
+    var burgerStand = new BurgerStand();
+    burgerStand.onOrder();
+
     return Container(
       child: Center(
-        child: RaisedButton(
-          child: Text('Click'),
-          onPressed: _onPressed,
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Click'),
+              onPressed: _onPressed,
+            ),
+            RaisedButton(
+              child: Text('Order Burger'),
+              onPressed: () => _onBurgerOrder(burgerStand),
+            )
+          ],
         ),
       ),
     );
+  }
+
+  void _onBurgerOrder(BurgerStand burgerStand) {
+    burgerStand.order("Burger");
   }
 
   void _onPressed() {
@@ -36,7 +52,7 @@ class StreamApp extends StatelessWidget {
   }
 
   void _onAsync() async {
-    await futurePrint(Duration(microseconds: 5000), "I am first").then((onValue) => print(onValue));
+    await futurePrint(Duration(microseconds: 1000), "I am first").then((onValue) => print(onValue));
     await futurePrint(Duration(microseconds: 20), "I am Second").then((onValue) => print(onValue));
     await futurePrint(Duration(microseconds: 1000), "I am Third").then((onValue) => print(onValue));
   }
