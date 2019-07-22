@@ -10,6 +10,19 @@ class BroadcastBurgerStand {
 
   Stream get onNewFriesOrder =>
       _controller.stream.where((Order order) => (order is Fries));
+
+  void onNewOrder() {
+    onNewBurgerOrder.listen((newOrder) {
+      grillCook.prepareOrder(newOrder);
+    });
+    onNewFriesOrder.listen((newOrder) {
+      friesCook.prepareOrder(newOrder);
+    });
+  }
+
+  void newOrder(Order order) {
+    _controller.add(order);
+  }
 }
 
 class Cook {

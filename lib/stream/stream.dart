@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'burger_stand.dart';
+import 'broadcast_burger_stand.dart';
 
 class StreamApp extends StatelessWidget {
   @override
@@ -21,6 +22,9 @@ class StreamApp extends StatelessWidget {
     var burgerStand = new BurgerStand();
     burgerStand.onOrder();
 
+    var broadcastBurgerStand = new BroadcastBurgerStand();
+    broadcastBurgerStand.onNewOrder();
+
     return Container(
       child: Center(
         child: Column(
@@ -32,11 +36,20 @@ class StreamApp extends StatelessWidget {
             RaisedButton(
               child: Text('Order Burger'),
               onPressed: () => _onBurgerOrder(burgerStand),
+            ),
+            RaisedButton(
+              child: Text('Order Burger + Fries'),
+              onPressed: () => __onBurgerFries(broadcastBurgerStand),
             )
           ],
         ),
       ),
     );
+  }
+
+  void __onBurgerFries(BroadcastBurgerStand bBurgetStand) {
+//    bBurgetStand.newOrder(new Burger());
+    bBurgetStand.newOrder(new Fries());
   }
 
   void _onBurgerOrder(BurgerStand burgerStand) {
