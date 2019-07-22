@@ -12,11 +12,11 @@ class BroadcastBurgerStand {
       _controller.stream.where((Order order) => (order is Fries));
 
   void onNewOrder() {
-    onNewBurgerOrder.listen((newOrder) {
-      grillCook.prepareOrder(newOrder);
+    onNewBurgerOrder.listen((order) {
+      grillCook.prepareOrder(order);
     });
-    onNewFriesOrder.listen((newOrder) {
-      friesCook.prepareOrder(newOrder);
+    onNewFriesOrder.listen((order) {
+      friesCook.prepareOrder(order);
     });
   }
 
@@ -27,7 +27,7 @@ class BroadcastBurgerStand {
 
 class Cook {
   void prepareOrder(Order order) {
-    print("Preparing order: $order");
+    print("Received... Preparing order: $order");
   }
 }
 
