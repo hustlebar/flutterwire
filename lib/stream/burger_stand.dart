@@ -19,6 +19,6 @@ class BurgerStand {
 
 class Cook {
   void prepareOrder(String order) {
-    print("Preparing the order: $order");
+    print("Preparing the order $order");
   }
 }
