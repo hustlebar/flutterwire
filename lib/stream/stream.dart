@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'burger_stand.dart';
 import 'broadcast_burger_stand.dart';
 
+import 'package:flutterwire/todo/todos.dart';
+
 class StreamApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,11 @@ class StreamApp extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Order Burger + Fries'),
-              onPressed: () => __onBurgerFries(broadcastBurgerStand),
+              onPressed: () => _onBurgerFries(broadcastBurgerStand),
+            ),
+            RaisedButton(
+              child: Text('Call Todos'),
+              onPressed: () => _onTodos(),
             )
           ],
         ),
@@ -47,7 +53,11 @@ class StreamApp extends StatelessWidget {
     );
   }
 
-  void __onBurgerFries(BroadcastBurgerStand bBurgetStand) {
+  void _onTodos() {
+    new TodoServices().todos();
+  }
+
+  void _onBurgerFries(BroadcastBurgerStand bBurgetStand) {
 //    bBurgetStand.newOrder(new Burger());
     bBurgetStand.newOrder(new Fries());
   }

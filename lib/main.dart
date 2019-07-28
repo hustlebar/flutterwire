@@ -17,8 +17,6 @@ import 'package:flutterwire/statemgt/navigation_value.dart';
 
 import 'package:flutterwire/stream/stream.dart';
 
-import 'package:flutterwire/todo/todos.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
