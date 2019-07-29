@@ -7,14 +7,14 @@ class TodoServices {
   Client client = new Client();
   final String url = "https://jsonplaceholder.typicode.com/todos";
 
-  void todos() async {
+  Future<List<Todo>> todos() async {
     final response = await client.get(url);
     print(response.statusCode);
 
     if (response.statusCode == 200) {
-      jsonDecode(response.body);
-
-      return null;
+      List<Todo> todos = (jsonDecode(response.body) as List)
+          .map((i) => Todo.fromJson(i)).toList();
+      return todos;
     } else {
       throw Exception('Error while loading todos');
     }
