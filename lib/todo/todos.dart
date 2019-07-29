@@ -12,8 +12,11 @@ class TodoServices {
     print(response.statusCode);
 
     if (response.statusCode == 200) {
-      Map<String, dynamic> todos = jsonDecode(response.body);
+      jsonDecode(response.body);
 
+      return null;
+    } else {
+      throw Exception('Error while loading todos');
     }
   }
 }
