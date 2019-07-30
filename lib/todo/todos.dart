@@ -17,7 +17,7 @@ class TodoServices {
           .map((i) => Todo.fromJson(i)).toList();
       return todos;
     } else {
-      throw Exception('Error while loading todos');
+      throw Exception('Error while loading todos.');
     }
   }
 }
