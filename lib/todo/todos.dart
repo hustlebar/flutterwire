@@ -1,8 +1,39 @@
+import 'package:flutter/material.dart';
+
 import 'package:http/http.dart';
+import 'dart:async';
 import 'dart:convert';
 
 import 'todo.dart';
 //Ref: https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51
+
+class TodoController {
+  final TodoServices services;
+  List<Todo> todos;
+
+  StreamController<bool> onSyncController = new StreamController();
+  Stream<bool> get onSync => onSyncController.stream;
+
+  TodoController(this.services);
+}
+
+class Todos extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return null;
+  }
+
+  Widget _build(BuildContext context) {
+    new TodoServices().todos().then((onTodos) => {
+
+    });
+
+//    return ListView.builder(
+//      itemCount: todos != null ? todos.length : 1,
+//      itemBuilder: null
+//    );
+  }
+}
 
 class TodoServices {
   Client client = new Client();
