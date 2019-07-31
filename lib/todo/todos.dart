@@ -17,7 +17,7 @@ class TodoController {
   TodoController(this.services);
 }
 
-class Todos extends StatelessWidget {
+class TodosApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return null;
