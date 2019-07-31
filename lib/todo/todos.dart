@@ -15,6 +15,10 @@ class TodoServices {
     if (response.statusCode == 200) {
       List<Todo> todos = (jsonDecode(response.body) as List)
           .map((i) => Todo.fromJson(i)).toList();
+
+//      for (var i = 0; i < todos.length; i++) {
+//        print(todos[i]);
+//      }
       return todos;
     } else {
       throw Exception('Error while loading todos.');
