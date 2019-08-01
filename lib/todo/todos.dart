@@ -52,7 +52,7 @@ class TodoServices {
 //      }
       return todos;
     } else {
-      throw Exception('Error while loading todos.');
+      throw Exception('Error while loading todos..');
     }
   }
 }
