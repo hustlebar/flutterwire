@@ -39,4 +39,10 @@ class _TodoPageState extends State<TodoPage> {
   Widget _build(BuildContext context) {
     return null;
   }
+
+  Widget get body => isLoading
+    ? CircularProgressIndicator()
+    : ListView.builder(
+      itemBuilder: null
+    );
 }
