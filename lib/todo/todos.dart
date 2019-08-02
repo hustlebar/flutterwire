@@ -15,18 +15,30 @@ class TodoController {
   Stream<bool> get onSync => onSyncController.stream;
 
   TodoController(this.services);
+
+  Future<List<Todo>> fetchTodos() async {
+    onSyncController.add(true);
+    todos = await services.todos();
+    onSyncController.add(false);
+
+    return todos;
+  }
 }
 
-class TodosApp extends StatelessWidget {
+class TodoApp extends StatelessWidget {
+  final TodoController _controller;
+  TodoApp(this._controller);
+
   @override
   Widget build(BuildContext context) {
     return null;
   }
 
   Widget _build(BuildContext context) {
-    new TodoServices().todos().then((onTodos) => {
 
-    });
+//    new TodoServices().todos().then((onTodos) => {
+//
+//    });
 
 //    return ListView.builder(
 //      itemCount: todos != null ? todos.length : 1,
