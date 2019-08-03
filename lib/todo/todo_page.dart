@@ -58,6 +58,8 @@ class _TodoPageState extends State<TodoPage> {
     );
 
   void _updateTodo(Todo todo, bool value) {
-    
+    setState(() {
+      todo.completed = value;
+    });
   }
 }
