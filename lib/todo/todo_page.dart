@@ -43,6 +43,7 @@ class _TodoPageState extends State<TodoPage> {
   Widget get body => isLoading
     ? CircularProgressIndicator()
     : ListView.builder(
+      itemCount: todos != null ? todos.length : 1,
       itemBuilder: null
     );
 }
