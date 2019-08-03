@@ -44,6 +44,20 @@ class _TodoPageState extends State<TodoPage> {
     ? CircularProgressIndicator()
     : ListView.builder(
       itemCount: todos != null ? todos.length : 1,
-      itemBuilder: null
+      itemBuilder: (ctx, index) {
+        if (todos != null) {
+          return CheckboxListTile(
+            value: todos[index].completed,
+            title: Text(todos[index].title),
+            onChanged: (bool val) => _updateTodo(todos[index], val)
+          );
+        } else {
+          return Text("Tap to fetch todos");
+        }
+      }
     );
+
+  void _updateTodo(Todo todo, bool value) {
+    
+  }
 }
