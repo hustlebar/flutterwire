@@ -17,6 +17,8 @@ import 'package:flutterwire/statemgt/navigation_value.dart';
 
 import 'package:flutterwire/stream/stream.dart';
 
+import 'package:flutterwire/todo/todo_page.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.orange,
         accentColor: Colors.orangeAccent
       ),
-      home: StreamApp(),
+      home: TodoPage(),
 //      home: MyHomePage(title: 'Flutter Wire'),
 //      routes: {
 //        MarketPlaceRoute.home: (context) => MarketplaceHome(),

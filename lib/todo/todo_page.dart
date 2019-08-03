@@ -18,10 +18,10 @@ class _TodoPageState extends State<TodoPage> {
 
   @override
   void initState() {
-    super.initState();
-    widget.controller.onSync.listen((bool syncState) => setState(() {
-      isLoading = syncState;
-    }));
+//    super.initState();
+//    widget.controller.onSync.listen((bool syncState) => setState(() {
+//      isLoading = syncState;
+//    }));
   }
 
   void _renderTodos() async {
@@ -37,7 +37,20 @@ class _TodoPageState extends State<TodoPage> {
   }
 
   Widget _build(BuildContext context) {
-    return null;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Todo App'),
+      ),
+
+      body: Center(
+        child: body,
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _renderTodos(),
+        child: Icon(Icons.add),
+      ),
+    );
   }
 
   Widget get body => isLoading
