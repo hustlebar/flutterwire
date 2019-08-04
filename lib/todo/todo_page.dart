@@ -65,7 +65,7 @@ class _TodoPageState extends State<TodoPage> {
             onChanged: (bool val) => _updateTodo(todos[index], val)
           );
         } else {
-          return Text("Tap to fetch todos");
+          return Text("Tap to fetch todos.");
         }
       }
     );
