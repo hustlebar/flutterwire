@@ -17,6 +17,7 @@ import 'package:flutterwire/statemgt/navigation_value.dart';
 
 import 'package:flutterwire/stream/stream.dart';
 
+import 'package:flutterwire/todo/todos.dart';
 import 'package:flutterwire/todo/todo_page.dart';
 
 void main() => runApp(MyApp());
@@ -24,6 +25,9 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var services = new TodoServices();
+    var _controller = new TodoController(services);
+
     return MaterialApp(
       title: 'Flutter Wire',
 //      debugShowCheckedModeBanner: false,
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.orange,
         accentColor: Colors.orangeAccent
       ),
-      home: TodoPage(),
+      home: TodoPage(controller: _controller,),
 //      home: MyHomePage(title: 'Flutter Wire'),
 //      routes: {
 //        MarketPlaceRoute.home: (context) => MarketplaceHome(),

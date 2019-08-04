@@ -18,10 +18,10 @@ class _TodoPageState extends State<TodoPage> {
 
   @override
   void initState() {
-//    super.initState();
-//    widget.controller.onSync.listen((bool syncState) => setState(() {
-//      isLoading = syncState;
-//    }));
+    super.initState();
+    widget.controller.onSync.listen((bool syncState) => setState(() {
+      isLoading = syncState;
+    }));
   }
 
   void _renderTodos() async {
@@ -71,8 +71,9 @@ class _TodoPageState extends State<TodoPage> {
     );
 
   void _updateTodo(Todo todo, bool value) {
+    print('Called');
+    todo.completed = value;
     setState(() {
-      todo.completed = value;
     });
   }
 }
