@@ -22,6 +22,8 @@ class _TodoPageState extends State<TodoPage> {
     widget.controller.onSync.listen((bool syncState) => setState(() {
       isLoading = syncState;
     }));
+
+//    _renderTodos();
   }
 
   void _renderTodos() async {
