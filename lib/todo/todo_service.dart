@@ -25,3 +25,24 @@ class HttpServices implements Services {
     return null;
   }
 }
+
+class FirebaseServices implements Services {
+  @override
+  Future addTodo(Todo todo) {
+    // TODO: implement addTodo
+    return null;
+  }
+
+  @override
+  Future<List<Todo>> getTodos() {
+    // TODO: implement getTodos
+    return null;
+  }
+
+  @override
+  Future<Todo> updateTodo(Todo todo) {
+    // TODO: implement updateTodo
+    return null;
+  }
+
+}
