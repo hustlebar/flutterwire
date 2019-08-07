@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "463583635199",
+    "firebase_url": "https://todo-6bd05.firebaseio.com",
+    "project_id": "todo-6bd05",
+    "storage_bucket": "todo-6bd05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463583635199:android:db5e2c8e78b81e5d",
+        "android_client_info": {
+          "package_name": "com.hustlebar.flutterwire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463583635199-3o4j4jo50ta2rr2jmcb6sfnv4s13vpti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUQlS4NY26kt0DsOTAjBgOHWaFi8tKTUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463583635199-3o4j4jo50ta2rr2jmcb6sfnv4s13vpti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
