@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutterwire/todo/todo.dart';
 
 abstract class Services {
@@ -34,9 +36,10 @@ class FirebaseServices implements Services {
   }
 
   @override
-  Future<List<Todo>> getTodos() {
-    // TODO: implement getTodos
-    return null;
+  Future<List<Todo>> getTodos() async {
+    QuerySnapshot snapshot = await
+      Firestore.instance.collection("todos").getDocuments();
+    return todosFromSnapshot(snapshot);
   }
 
   @override
@@ -45,4 +48,9 @@ class FirebaseServices implements Services {
     return null;
   }
 
+  Future<List<Todo>> todosFromSnapshot(QuerySnapshot snapshot) async {
+    return snapshot.documents.map((DocumentSnapshot documentSnapshot) {
+      return new Todo.fromJson(documentSnapshot.data);
+    }).toList();
+  }
 }
