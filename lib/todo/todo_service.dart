@@ -1,3 +1,7 @@
+import 'package:http/http.dart';
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutterwire/todo/todo.dart';
@@ -9,6 +13,9 @@ abstract class Services {
 }
 
 class HttpServices implements Services {
+  final Client client = new Client();
+  final String url = "https://jsonplaceholder.typicode.com/todos";
+
   @override
   Future addTodo(Todo todo) {
     // TODO: implement addTodo
@@ -16,9 +23,16 @@ class HttpServices implements Services {
   }
 
   @override
-  Future<List<Todo>> getTodos() {
-    // TODO: implement getTodos
-    return null;
+  Future<List<Todo>> getTodos() async {
+    final response = await client.get(url);
+    if (response.statusCode == 200) {
+      List<Todo> todos = (jsonDecode(response.body) as List)
+          .map((i) => Todo.fromJson(i)).toList();
+
+      return todos;
+    } else {
+      throw Exception('Error while loading todos..');
+    }
   }
 
   @override
