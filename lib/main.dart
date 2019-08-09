@@ -19,13 +19,14 @@ import 'package:flutterwire/stream/stream.dart';
 
 import 'package:flutterwire/todo/todos.dart';
 import 'package:flutterwire/todo/todo_page.dart';
+import 'package:flutterwire/todo/todo_service.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var services = new TodoServices();
+    var services = new HttpServices();
     var _controller = new TodoController(services);
 
     return MaterialApp(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'burger_stand.dart';
 import 'broadcast_burger_stand.dart';
 
-import 'package:flutterwire/todo/todos.dart';
+import 'package:flutterwire/todo/todo_service.dart';
 
 class StreamApp extends StatelessWidget {
   @override
@@ -54,7 +54,7 @@ class StreamApp extends StatelessWidget {
   }
 
   void _onTodos() {
-    new TodoServices().todos();
+    new HttpServices().getTodos();
   }
 
   void _onBurgerFries(BroadcastBurgerStand bBurgetStand) {
