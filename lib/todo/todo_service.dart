@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutterwire/todo/todo.dart';
 
+//abstract is equal to interface in Java
 abstract class Services {
   Future<List<Todo>> getTodos();
   Future<Todo> updateTodo(Todo todo);
