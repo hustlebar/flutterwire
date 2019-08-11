@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:http/http.dart';
+//import 'package:http/http.dart';
 import 'dart:async';
-import 'dart:convert';
+//import 'dart:convert';
 
 import 'todo.dart';
 import 'todo_service.dart';
@@ -33,18 +33,6 @@ class TodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return null;
-  }
-
-  Widget _build(BuildContext context) {
-
-//    new TodoServices().todos().then((onTodos) => {
-//
-//    });
-
-//    return ListView.builder(
-//      itemCount: todos != null ? todos.length : 1,
-//      itemBuilder: null
-//    );
   }
 }
 

@@ -2,20 +2,7 @@ import 'package:flutter/material.dart';
 import 'person.dart';
 import 'animal.dart';
 import 'animal_type.dart';
-import 'button.dart';
-import 'counter.dart';
-
-//import 'package:flutterwire/weather/weather.dart';
 import 'package:flutterwire/marketplace/marketplace.dart';
-import 'package:flutterwire/marketplace/util/marketplace_route.dart';
-import 'package:flutterwire/marketplace/pages/gallery.dart';
-import 'package:flutterwire/marketplace/pages/detail.dart';
-import 'package:flutterwire/marketplace/pages/home.dart';
-
-import 'package:flutterwire/statemgt/statemgt.dart';
-import 'package:flutterwire/statemgt/navigation_value.dart';
-
-import 'package:flutterwire/stream/stream.dart';
 
 import 'package:flutterwire/todo/todos.dart';
 import 'package:flutterwire/todo/todo_page.dart';
@@ -60,7 +47,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+//  int _counter = 0;
 
   void _incrementCounter() {
     Person person = new Person();
@@ -83,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print('Orientation: ${media.orientation}');
 
     setState(() {
-      _counter++;
+//      _counter++;
     });
   }
 
