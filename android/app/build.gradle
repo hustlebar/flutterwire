@@ -25,9 +25,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-//Custom added by me
-apply plugin: 'com.google.gms.google-services'
-
 android {
     compileSdkVersion 27
 
@@ -68,3 +65,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+//Custom added by me
+apply plugin: 'com.google.gms.google-services'
