@@ -2,8 +2,6 @@ import 'package:http/http.dart';
 import 'dart:async';
 import 'dart:convert';
 
-//import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'package:flutterwire/todo/todo.dart';
 
 //abstract is equal to interface in Java
