@@ -11,6 +11,7 @@ abstract class Services {
   Future addTodo(Todo todo);
 }
 
+//HTTP service to fetch data from external source
 class HttpServices implements Services {
   final Client client = new Client();
   final String url = "https://jsonplaceholder.typicode.com/todos";
