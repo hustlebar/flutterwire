@@ -42,6 +42,7 @@ class HttpServices implements Services {
   }
 }
 
+//Firebase service to talk to Firestore
 //class FirebaseServices implements Services {
 //  @override
 //  Future addTodo(Todo todo) {
