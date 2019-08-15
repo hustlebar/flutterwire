@@ -2,6 +2,8 @@ import 'package:http/http.dart';
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutterwire/todo/todo.dart';
 
 //abstract is equal to interface in Java
@@ -43,29 +45,29 @@ class HttpServices implements Services {
 }
 
 //Firebase service to talk to Firestore
-//class FirebaseServices implements Services {
-//  @override
-//  Future addTodo(Todo todo) {
-//    // TODO: implement addTodo
-//    return null;
-//  }
-//
-//  @override
-//  Future<List<Todo>> getTodos() async {
-//    QuerySnapshot snapshot = await
-//      Firestore.instance.collection("todos").getDocuments();
-//    return todosFromSnapshot(snapshot);
-//  }
-//
-//  @override
-//  Future<Todo> updateTodo(Todo todo) {
-//    // TODO: implement updateTodo
-//    return null;
-//  }
-//
-//  Future<List<Todo>> todosFromSnapshot(QuerySnapshot snapshot) async {
-//    return snapshot.documents.map((DocumentSnapshot documentSnapshot) {
-//      return new Todo.fromJson(documentSnapshot.data);
-//    }).toList();
-//  }
-//}
+class FirebaseServices implements Services {
+  @override
+  Future addTodo(Todo todo) {
+    // TODO: implement addTodo
+    return null;
+  }
+
+  @override
+  Future<List<Todo>> getTodos() async {
+    QuerySnapshot snapshot = await
+      Firestore.instance.collection("todos").getDocuments();
+    return todosFromSnapshot(snapshot);
+  }
+
+  @override
+  Future<Todo> updateTodo(Todo todo) {
+    // TODO: implement updateTodo
+    return null;
+  }
+
+  Future<List<Todo>> todosFromSnapshot(QuerySnapshot snapshot) async {
+    return snapshot.documents.map((DocumentSnapshot documentSnapshot) {
+      return new Todo.fromJson(documentSnapshot.data);
+    }).toList();
+  }
+}
