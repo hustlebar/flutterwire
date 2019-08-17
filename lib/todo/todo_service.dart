@@ -60,8 +60,9 @@ class FirebaseServices implements Services {
   }
 
   @override
-  Future<Todo> updateTodo(Todo todo) {
-    // TODO: implement updateTodo
+  Future<Todo> updateTodo(Todo todo) async {
+    DocumentReference todoRef = await Firestore.instance.document("todos/${todo.id}");
+    print(todoRef);
     return null;
   }
 

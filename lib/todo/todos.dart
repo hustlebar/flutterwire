@@ -24,6 +24,12 @@ class TodoController {
 
     return todos;
   }
+
+  void updateTodo(Todo todo, bool value) async {
+    onSyncController.add(true);
+    await services.updateTodo(todo);
+    onSyncController.add(false);
+  }
 }
 
 class TodoApp extends StatelessWidget {
