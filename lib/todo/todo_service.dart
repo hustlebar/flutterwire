@@ -61,9 +61,14 @@ class FirebaseServices implements Services {
 
   @override
   Future<Todo> updateTodo(Todo todo, bool value) async {
-    DocumentReference todoRef = await Firestore.instance.document("todos/${todo.id}");
-    todoRef.p
-    return null;
+    todo.completed = value;
+    print(todo.toJson());
+
+//    await Firestore.instance
+//      .collection("todos")
+//      .document("${todo.id}")
+//      .updateData(todo.toJson());
+    return todo;
   }
 
   Future<List<Todo>> todosFromSnapshot(QuerySnapshot snapshot) async {

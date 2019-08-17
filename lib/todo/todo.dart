@@ -16,4 +16,10 @@ class Todo {
       json['completed'] as bool
     );
   }
+
+  Map<String, dynamic> toJson() =>
+    {
+      'title': title,
+      'completed': completed
+    };
 }

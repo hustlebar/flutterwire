@@ -27,7 +27,7 @@ class TodoController {
 
   void updateTodo(Todo todo, bool value) async {
     onSyncController.add(true);
-    await services.updateTodo(todo);
+    await services.updateTodo(todo, value);
     onSyncController.add(false);
   }
 }
