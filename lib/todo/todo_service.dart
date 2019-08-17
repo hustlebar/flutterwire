@@ -9,7 +9,7 @@ import 'package:flutterwire/todo/todo.dart';
 //abstract is equal to interface in Java
 abstract class Services {
   Future<List<Todo>> getTodos();
-  Future<Todo> updateTodo(Todo todo);
+  Future<Todo> updateTodo(Todo todo, bool value);
   Future addTodo(Todo todo);
 }
 
@@ -38,7 +38,7 @@ class HttpServices implements Services {
   }
 
   @override
-  Future<Todo> updateTodo(Todo todo) {
+  Future<Todo> updateTodo(Todo todo, bool value) {
     // TODO: implement updateTodo
     return null;
   }
@@ -60,9 +60,9 @@ class FirebaseServices implements Services {
   }
 
   @override
-  Future<Todo> updateTodo(Todo todo) async {
+  Future<Todo> updateTodo(Todo todo, bool value) async {
     DocumentReference todoRef = await Firestore.instance.document("todos/${todo.id}");
-    print(todoRef);
+    todoRef.p
     return null;
   }
 
