@@ -1,6 +1,6 @@
 class Todo {
   final int userId;
-  final int id;
+  String id;
   final String title;
   bool completed;
 
@@ -11,7 +11,7 @@ class Todo {
   factory Todo.fromJson(Map<String, dynamic> json) {
     return Todo(
       json['userId'] as int,
-      json['id'] as int,
+      json['id'] as String,
       json['title'] as String,
       json['completed'] as bool
     );

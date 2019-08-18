@@ -61,6 +61,7 @@ class _TodoPageState extends State<TodoPage> {
       itemCount: todos != null ? todos.length : 1,
       itemBuilder: (ctx, index) {
         if (todos != null) {
+          print('Json object: ${todos[index].toJson()}');
           return CheckboxListTile(
             value: todos[index].completed,
             title: Text(todos[index].title),
