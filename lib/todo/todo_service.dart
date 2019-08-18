@@ -71,7 +71,7 @@ class FirebaseServices implements Services {
   }
 
   Future<List<Todo>> todosFromSnapshot(QuerySnapshot snapshot) async {
-    return await snapshot.documents.map((DocumentSnapshot documentSnapshot) {
+    return snapshot.documents.map((DocumentSnapshot documentSnapshot) {
       Todo todo = new Todo.fromJson(documentSnapshot.data);
       todo.id = documentSnapshot.documentID;
       return todo;

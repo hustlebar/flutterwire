@@ -72,8 +72,8 @@ class _TodoPageState extends State<TodoPage> {
       }
     );
 
-  void _updateTodo(Todo todo, bool value) async {
-    await widget.controller.updateTodo(todo, value);
+  void _updateTodo(Todo todo, bool value) {
+    widget.controller.updateTodo(todo, value);
     setState(() {
       todo.completed = value;
     });
