@@ -10,7 +10,7 @@ import 'package:flutterwire/todo/todo.dart';
 abstract class Services {
   Future<List<Todo>> getTodos();
   Future<Todo> updateTodo(Todo todo, bool value);
-  Future addTodo(Todo todo);
+  Future<Todo> addTodo(Todo todo);
 }
 
 //HTTP service to fetch data from external source
@@ -19,7 +19,7 @@ class HttpServices implements Services {
   final String url = "https://jsonplaceholder.typicode.com/todos";
 
   @override
-  Future addTodo(Todo todo) {
+  Future<Todo> addTodo(Todo todo) {
     // TODO: implement addTodo
     return null;
   }
@@ -47,7 +47,7 @@ class HttpServices implements Services {
 //Firebase service to talk to Firestore
 class FirebaseServices implements Services {
   @override
-  Future addTodo(Todo todo) {
+  Future<Todo> addTodo(Todo todo) {
     // TODO: implement addTodo
     return null;
   }
