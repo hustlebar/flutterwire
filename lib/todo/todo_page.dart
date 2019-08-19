@@ -59,9 +59,30 @@ class _TodoPageState extends State<TodoPage> {
     ? CircularProgressIndicator()
     : container;
 
+  final TextEditingController _controller = TextEditingController();
+
   Widget get container => Column(
     children: <Widget>[
-      Text('New Field'),
+      Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: TextField(
+                controller: _controller,
+                decoration: InputDecoration(
+                    labelText: 'Enter your todo'
+                ),
+              ),
+            ),
+            RaisedButton(
+              child: Text('Add Todo'),
+              onPressed: _onPressed,
+            )
+          ],
+        ),
+      ),
+
       Container(
         child: ListView.builder(
             scrollDirection: Axis.vertical,
@@ -82,6 +103,10 @@ class _TodoPageState extends State<TodoPage> {
       )
     ],
   );
+
+  void _onPressed() {
+    print(_controller.value.text);
+  }
 
   void _updateTodo(Todo todo, bool value) {
     widget.controller.updateTodo(todo, value);
