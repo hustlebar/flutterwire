@@ -10,46 +10,16 @@ import 'package:flutterwire/todo/todo.dart';
 abstract class Services {
   Future<List<Todo>> getTodos();
   Future<Todo> updateTodo(Todo todo, bool value);
-  Future<Todo> addTodo(Todo todo);
-}
-
-//HTTP service to fetch data from external source
-class HttpServices implements Services {
-  final Client client = new Client();
-  final String url = "https://jsonplaceholder.typicode.com/todos";
-
-  @override
-  Future<Todo> addTodo(Todo todo) {
-    // TODO: implement addTodo
-    return null;
-  }
-
-  @override
-  Future<List<Todo>> getTodos() async {
-    final response = await client.get(url);
-    if (response.statusCode == 200) {
-      List<Todo> todos = (jsonDecode(response.body) as List)
-          .map((i) => Todo.fromJson(i)).toList();
-
-      return todos;
-    } else {
-      throw Exception('Error while loading todos..');
-    }
-  }
-
-  @override
-  Future<Todo> updateTodo(Todo todo, bool value) {
-    // TODO: implement updateTodo
-    return null;
-  }
+  void addTodo(Todo todo);
 }
 
 //Firebase service to talk to Firestore
 class FirebaseServices implements Services {
   @override
-  Future<Todo> addTodo(Todo todo) {
-    // TODO: implement addTodo
-    return null;
+  void addTodo(Todo todo) async {
+    Firestore.instance
+      .collection("todods")
+      .add(todo.toJson());
   }
 
   @override
@@ -76,5 +46,36 @@ class FirebaseServices implements Services {
       todo.id = documentSnapshot.documentID;
       return todo;
     }).toList();
+  }
+}
+
+//HTTP service to fetch data from external source
+class HttpServices implements Services {
+  final Client client = new Client();
+  final String url = "https://jsonplaceholder.typicode.com/todos";
+
+  @override
+  void addTodo(Todo todo) {
+    // TODO: implement addTodo
+    return null;
+  }
+
+  @override
+  Future<List<Todo>> getTodos() async {
+    final response = await client.get(url);
+    if (response.statusCode == 200) {
+      List<Todo> todos = (jsonDecode(response.body) as List)
+          .map((i) => Todo.fromJson(i)).toList();
+
+      return todos;
+    } else {
+      throw Exception('Error while loading todos..');
+    }
+  }
+
+  @override
+  Future<Todo> updateTodo(Todo todo, bool value) {
+    // TODO: implement updateTodo
+    return null;
   }
 }
