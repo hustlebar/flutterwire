@@ -57,20 +57,31 @@ class _TodoPageState extends State<TodoPage> {
 
   Widget get body => isLoading
     ? CircularProgressIndicator()
-    : ListView.builder(
-      itemCount: todos != null ? todos.length : 1,
-      itemBuilder: (ctx, index) {
-        if (todos != null) {
-          return CheckboxListTile(
-            value: todos[index].completed,
-            title: Text(todos[index].title),
-            onChanged: (bool val) => _updateTodo(todos[index], val)
-          );
-        } else {
-          return Text("Refresh Todos");
-        }
-      }
-    );
+    : container;
+
+  Widget get container => Column(
+    children: <Widget>[
+      Text('New Field'),
+      Container(
+        child: ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true, //https://stackoverflow.com/questions/50252569/vertical-viewport-was-given-unbounded-height
+            itemCount: todos != null ? todos.length : 1,
+            itemBuilder: (ctx, index) {
+              if (todos != null) {
+                return CheckboxListTile(
+                    value: todos[index].completed,
+                    title: Text(todos[index].title),
+                    onChanged: (bool val) => _updateTodo(todos[index], val)
+                );
+              } else {
+                return Text("Refresh Todos");
+              }
+            }
+          ),
+      )
+    ],
+  );
 
   void _updateTodo(Todo todo, bool value) {
     widget.controller.updateTodo(todo, value);
