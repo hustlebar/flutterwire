@@ -110,6 +110,7 @@ class _TodoPageState extends State<TodoPage> {
     widget.controller.addTodo(todo);
     setState(() {
       _controller.clear();
+      todos.add(todo);
     });
   }
 
