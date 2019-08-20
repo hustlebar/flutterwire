@@ -30,6 +30,10 @@ class TodoController {
     await services.updateTodo(todo, value);
     onSyncController.add(false);
   }
+
+  void addTodo(Todo todo) async {
+    await services.addTodo(todo);
+  }
 }
 
 class TodoApp extends StatelessWidget {

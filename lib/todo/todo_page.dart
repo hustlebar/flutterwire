@@ -106,6 +106,11 @@ class _TodoPageState extends State<TodoPage> {
 
   void _onPressed() {
     print(_controller.value.text);
+    Todo todo = Todo(null, null, _controller.value.text, false);
+    widget.controller.addTodo(todo);
+    setState(() {
+      _controller.clear();
+    });
   }
 
   void _updateTodo(Todo todo, bool value) {

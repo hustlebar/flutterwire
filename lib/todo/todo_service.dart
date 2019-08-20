@@ -18,7 +18,7 @@ class FirebaseServices implements Services {
   @override
   void addTodo(Todo todo) async {
     Firestore.instance
-      .collection("todods")
+      .collection("todos")
       .add(todo.toJson());
   }
 
