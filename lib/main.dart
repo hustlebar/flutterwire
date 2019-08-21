@@ -8,6 +8,8 @@ import 'package:flutterwire/todo/todos.dart';
 import 'package:flutterwire/todo/todo_page.dart';
 import 'package:flutterwire/todo/todo_service.dart';
 
+import 'package:flutterwire/chat/chat_main.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -27,7 +29,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.orange,
         accentColor: Colors.orangeAccent
       ),
-      home: TodoPage(controller: _controller,),
+      home: ChatApp()
+//      home: TodoPage(controller: _controller,),
 //      home: MyHomePage(title: 'Flutter Wire'),
 //      routes: {
 //        MarketPlaceRoute.home: (context) => MarketplaceHome(),
