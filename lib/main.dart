@@ -10,7 +10,7 @@ import 'package:flutterwire/todo/todo_service.dart';
 
 import 'package:flutterwire/chat/chat_main.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(ChatApp());
 
 class MyApp extends StatelessWidget {
   @override
