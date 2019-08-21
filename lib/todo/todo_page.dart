@@ -77,7 +77,7 @@ class _TodoPageState extends State<TodoPage> {
             ),
             RaisedButton(
               child: Text('Add Todo'),
-              onPressed: _onPressed,
+              onPressed: _onAdd,
             )
           ],
         ),
@@ -93,7 +93,7 @@ class _TodoPageState extends State<TodoPage> {
                 return CheckboxListTile(
                     value: todos[index].completed,
                     title: Text(todos[index].title),
-                    onChanged: (bool val) => _updateTodo(todos[index], val)
+                    onChanged: (bool val) => _onUpdate(todos[index], val)
                 );
               } else {
                 return Text("Refresh Todos");
@@ -104,8 +104,7 @@ class _TodoPageState extends State<TodoPage> {
     ],
   );
 
-  void _onPressed() {
-    print(_controller.value.text);
+  void _onAdd() {
     Todo todo = Todo(null, null, _controller.value.text, false);
     widget.controller.addTodo(todo);
     setState(() {
@@ -114,7 +113,7 @@ class _TodoPageState extends State<TodoPage> {
     });
   }
 
-  void _updateTodo(Todo todo, bool value) {
+  void _onUpdate(Todo todo, bool value) {
     widget.controller.updateTodo(todo, value);
     setState(() {
       todo.completed = value;
