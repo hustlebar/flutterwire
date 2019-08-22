@@ -25,6 +25,22 @@ class ChatScreenState extends State<ChatScreen> {
   Widget _buildComposer(BuildContext ctx) {
     return Container(
       padding: EdgeInsets.all(10.0),
+      child: Row(
+        children: <Widget>[
+          Flexible(
+            child: TextField(
+              controller: _controller,
+              decoration: InputDecoration.collapsed(hintText: 'Send a message'),
+              onSubmitted: _onSubmit,
+            ),
+          )
+        ],
+      ),
     );
+  }
+
+  void _onSubmit(String value) {
+    print(value);
+    _controller.clear();
   }
 }
