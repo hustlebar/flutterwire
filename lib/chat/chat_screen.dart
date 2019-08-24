@@ -33,6 +33,12 @@ class ChatScreenState extends State<ChatScreen> {
               decoration: InputDecoration.collapsed(hintText: 'Send your message'),
               onSubmitted: _onSubmit,
             ),
+          ),
+          Container(
+            child: IconButton(
+              icon: Icon(Icons.send),
+              onPressed: () => _onSubmit(_controller.text),
+            ),
           )
         ],
       ),
