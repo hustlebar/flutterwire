@@ -18,7 +18,14 @@ class ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         title: Text('Friendlychat'),
       ),
-      body: _buildComposer(ctx),
+      body: _buildTheme(context),
+    );
+  }
+
+  Widget _buildTheme(BuildContext ctx) {
+    return IconTheme(
+      data: IconThemeData(color: Theme.of(ctx).accentColor),
+      child: _buildComposer(ctx),
     );
   }
 

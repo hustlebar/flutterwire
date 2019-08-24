@@ -13,8 +13,8 @@ class ChatApp extends StatelessWidget {
       title: 'Friendlychat',
       home: ChatScreen(),
       theme: ThemeData(
-        primaryColor: Colors.amber,
-        accentColor: Colors.orangeAccent
+        primaryColor: Colors.blue,
+        accentColor: Colors.blueAccent
       ),
     );
   }
