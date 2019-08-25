@@ -33,19 +33,19 @@ class ProductDetail extends StatelessWidget {
 //    );
   }
 
-  Widget _buildChildren(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text('Details page'),
-        RaisedButton(
-          child: Text('Go back'),
-          onPressed: () => _onBack(context),
-        )
-      ],
-    );
-  }
+//  Widget _buildChildren(BuildContext context) {
+//    return Column(
+//      children: <Widget>[
+//        Text('Details page'),
+//        RaisedButton(
+//          child: Text('Go back'),
+//          onPressed: () => _onBack(context),
+//        )
+//      ],
+//    );
+//  }
 
-  void _onBack(BuildContext context) {
-    Navigator.pop(context);
-  }
+//  void _onBack(BuildContext context) {
+//    Navigator.pop(context);
+//  }
 }
