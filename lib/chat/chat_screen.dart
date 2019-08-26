@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chat_message.dart';
 
 class ChatScreen extends StatefulWidget {
   @override
@@ -6,6 +7,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class ChatScreenState extends State<ChatScreen> {
+  final List<ChatMessage> _messages = [];
   final TextEditingController _controller = new TextEditingController();
 
   @override
@@ -25,7 +27,25 @@ class ChatScreenState extends State<ChatScreen> {
   Widget _buildTheme(BuildContext ctx) {
     return IconTheme(
       data: IconThemeData(color: Theme.of(ctx).accentColor),
-      child: _buildComposer(ctx),
+      child: _buildChild(ctx),
+    );
+  }
+
+  Widget _buildChild(BuildContext ctx) {
+    return Column(
+      children: <Widget>[
+        _buildMessageList(ctx),
+        _buildComposer(ctx)
+      ],
+    );
+  }
+
+  Widget _buildMessageList(BuildContext ctx) {
+    return Flexible(
+      child: ListView.builder(
+        itemCount: _messages.length,
+        itemBuilder: (_, int index) => _messages[index]
+      ),
     );
   }
 
@@ -53,7 +73,10 @@ class ChatScreenState extends State<ChatScreen> {
   }
 
   void _onSubmit(String value) {
-    print(value);
     _controller.clear();
+    ChatMessage message = ChatMessage(text: value);
+    setState(() {
+      _messages.insert(0, message);
+    });
   }
 }

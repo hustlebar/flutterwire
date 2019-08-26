@@ -21,7 +21,7 @@ class ChatMessage extends StatelessWidget {
   }
 
   List<Widget> _buildChildren(BuildContext ctx) {
-    List<Widget> children = new List(2);
+    List<Widget> children = [];
     children.add(Container(
       margin: const EdgeInsets.all(10.0),
       child: CircleAvatar(
