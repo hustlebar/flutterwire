@@ -35,6 +35,7 @@ class ChatScreenState extends State<ChatScreen> {
     return Column(
       children: <Widget>[
         _buildMessageList(ctx),
+        Divider(height: 1.0,),
         _buildComposer(ctx)
       ],
     );
@@ -53,6 +54,9 @@ class ChatScreenState extends State<ChatScreen> {
 
   Widget _buildComposer(BuildContext ctx) {
     return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(ctx).cardColor
+      ),
       padding: EdgeInsets.all(10.0),
       child: Row(
         children: <Widget>[
