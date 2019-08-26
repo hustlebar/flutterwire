@@ -4,9 +4,8 @@ import 'animal.dart';
 import 'animal_type.dart';
 import 'package:flutterwire/marketplace/marketplace.dart';
 
-import 'package:flutterwire/todo/todos.dart';
-import 'package:flutterwire/todo/todo_page.dart';
-import 'package:flutterwire/todo/todo_service.dart';
+//import 'package:flutterwire/todo/todos.dart';
+//import 'package:flutterwire/todo/todo_service.dart';
 
 import 'package:flutterwire/chat/chat_main.dart';
 
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 //    var services = new HttpServices();
-    var services = new FirebaseServices();
-    var _controller = new TodoController(services);
+//    var services = new FirebaseServices();
+//    var _controller = new TodoController(services);
 
     return MaterialApp(
       title: 'Flutter Wire',

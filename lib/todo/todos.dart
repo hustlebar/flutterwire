@@ -32,7 +32,7 @@ class TodoController {
   }
 
   void addTodo(Todo todo) async {
-    await services.addTodo(todo);
+    services.addTodo(todo);
   }
 }
 
