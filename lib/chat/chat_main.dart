@@ -9,13 +9,28 @@ class ChatApp extends StatelessWidget {
   }
 
   Widget _build(BuildContext ctx) {
+    TargetPlatform currentPlatform = Theme.of(ctx).platform;
     return MaterialApp(
       title: 'Friendlychat',
       home: ChatScreen(),
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        accentColor: Colors.blueAccent
-      ),
+      theme: currentPlatform == TargetPlatform.iOS
+        ? kiosTheme()
+        : defaultTheme(),
+    );
+  }
+
+  ThemeData kiosTheme() {
+    return ThemeData(
+      primarySwatch: Colors.orange,
+      primaryColor: Colors.grey[100],
+      primaryColorBrightness: Brightness.light,
+    );
+  }
+
+  ThemeData defaultTheme() {
+    return ThemeData(
+      primarySwatch: Colors.purple,
+      accentColor: Colors.orangeAccent[400],
     );
   }
 }
