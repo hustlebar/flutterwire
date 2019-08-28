@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ChatMessage extends StatelessWidget {
-  ChatMessage({this.text});
+  ChatMessage({this.text, this.animationController});
+
   final String text;
+  final AnimationController animationController;
 
   static const String _name = "Tham";
 
@@ -12,6 +14,17 @@ class ChatMessage extends StatelessWidget {
   }
 
   Widget _build(BuildContext ctx) {
+    
+//    return SizeTransition(
+//      sizeFactor: CurvedAnimation(
+//        parent: animationController,
+//        curve: Curves.easeOut
+//      ),
+//      child: _buildContainer(ctx),
+//    );
+  }
+
+  Widget _buildContainer(BuildContext ctx) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: Row(
