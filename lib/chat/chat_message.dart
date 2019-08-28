@@ -14,7 +14,15 @@ class ChatMessage extends StatelessWidget {
   }
 
   Widget _build(BuildContext ctx) {
-    
+    final animation = Tween(
+      begin: 0.0,
+      end: 1.0
+    ).animate(animationController);
+
+    return FadeTransition(
+      opacity: animation,
+      child: _buildContainer(ctx),
+    );
 //    return SizeTransition(
 //      sizeFactor: CurvedAnimation(
 //        parent: animationController,
