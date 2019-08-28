@@ -6,21 +6,32 @@ class ChatMessage extends StatelessWidget {
   final String text;
   final AnimationController animationController;
 
+  Animation<double> _animation;
+
   static const String _name = "Tham";
 
   @override
   Widget build(BuildContext context) {
-    return _build(context);
+    return Container(
+      child: _build(context),
+    );
   }
 
   Widget _build(BuildContext ctx) {
-    final animation = Tween(
+    _animation = Tween(
       begin: 0.0,
       end: 1.0
     ).animate(animationController);
 
+//    _animation = CurvedAnimation(
+//      parent: animationController,
+//      curve: Curves.easeIn
+//    );
+
+    animationController.forward();
+
     return FadeTransition(
-      opacity: animation,
+      opacity: _animation,
       child: _buildContainer(ctx),
     );
 //    return SizeTransition(
