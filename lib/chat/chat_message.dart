@@ -28,7 +28,7 @@ class ChatMessage extends StatelessWidget {
 //      curve: Curves.easeIn
 //    );
 
-    animationController.forward();
+//    animationController.forward();
 
     return FadeTransition(
       opacity: _animation,
