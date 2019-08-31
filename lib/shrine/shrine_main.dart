@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 class ShrineApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,6 +11,7 @@ class ShrineApp extends StatelessWidget {
   Widget _build(BuildContext ctx) {
     return MaterialApp(
       title: 'Shrine',
+      home: LoginPage(),
     );
   }
 }
