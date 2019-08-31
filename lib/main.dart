@@ -4,11 +4,6 @@ import 'animal.dart';
 import 'animal_type.dart';
 import 'package:flutterwire/marketplace/marketplace.dart';
 
-//import 'package:flutterwire/todo/todos.dart';
-//import 'package:flutterwire/todo/todo_service.dart';
-
-//import 'package:flutterwire/chat/chat_main.dart';
-
 import 'package:flutterwire/shrine/shrine_main.dart';
 
 void main() => runApp(ShrineApp());
