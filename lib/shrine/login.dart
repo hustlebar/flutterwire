@@ -19,6 +19,18 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _build(BuildContext context) {
-    return Text('Login');
+    return SafeArea(
+      child: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        children: <Widget>[
+          SizedBox(height: 80.0),
+          Column(
+            children: <Widget>[
+              Image.asset('assets/images/logo.png')
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
