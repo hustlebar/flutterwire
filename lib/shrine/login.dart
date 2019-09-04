@@ -26,9 +26,27 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 80.0),
           Column(
             children: <Widget>[
-              Image.asset('assets/images/logo.png')
+              Image.asset('assets/images/logo.png'),
+              SizedBox(height: 50.0,),
+              Text('Shrine')
             ],
-          )
+          ),
+
+          SizedBox(height: 120.0,),
+          TextField(
+            decoration: InputDecoration(
+              filled: true,
+              labelText: 'Username'
+            ),
+          ),
+          SizedBox(height: 12.0,),
+          TextField(
+            decoration: InputDecoration(
+              filled: true,
+              labelText: 'Password',
+            ),
+            obscureText: true,
+          ),
         ],
       ),
     );
