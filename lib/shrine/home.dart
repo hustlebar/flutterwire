@@ -18,6 +18,9 @@ class HomePage extends StatelessWidget {
   Widget _buildLeading(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.menu, semanticLabel: 'menu',),
+      onPressed: () {
+        print('Menu button clicked');
+      },
     );
   }
 }
