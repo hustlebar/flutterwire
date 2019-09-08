@@ -47,6 +47,24 @@ class _LoginPageState extends State<LoginPage> {
             ),
             obscureText: true,
           ),
+
+          ButtonBar(
+            children: <Widget>[
+              FlatButton(
+                child: Text('Cancel'),
+                onPressed: () {
+
+                },
+              ),
+              RaisedButton(
+                child: Text('Login'),
+                onPressed: () {
+
+                },
+              )
+            ],
+          ),
+          SizedBox(height: 100.0,),
         ],
       ),
     );
