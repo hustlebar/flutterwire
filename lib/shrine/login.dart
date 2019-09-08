@@ -19,6 +19,9 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _build(BuildContext context) {
+    final _userNameController = TextEditingController();
+    final _passwordController = TextEditingController();
+
     return SafeArea(
       child: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -34,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
 
           SizedBox(height: 120.0,),
           TextField(
+            controller: _userNameController,
             decoration: InputDecoration(
               filled: true,
               labelText: 'Username'
@@ -41,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           SizedBox(height: 12.0,),
           TextField(
+            controller: _passwordController,
             decoration: InputDecoration(
               filled: true,
               labelText: 'Password',
@@ -53,13 +58,13 @@ class _LoginPageState extends State<LoginPage> {
               FlatButton(
                 child: Text('Cancel'),
                 onPressed: () {
-
+                  print('Username: ${_userNameController.text}');
                 },
               ),
               RaisedButton(
                 child: Text('Login'),
                 onPressed: () {
-
+                  print('Password: ${_passwordController.text}');
                 },
               )
             ],
