@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwire/shrine/home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -65,6 +66,10 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text('Login'),
                 onPressed: () {
                   print('Password: ${_passwordController.text}');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
                 },
               )
             ],

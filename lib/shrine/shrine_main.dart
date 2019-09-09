@@ -12,6 +12,7 @@ class ShrineApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shrine',
       home: LoginPage(),
+//      routes: ,
     );
   }
 }
