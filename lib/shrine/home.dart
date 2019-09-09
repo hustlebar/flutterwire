@@ -13,7 +13,24 @@ class HomePage extends StatelessWidget {
         leading: _buildLeading(context),
         actions: _buildActions(context),
       ),
+      body: _buildBody(context),
     );
+  }
+
+  Widget _buildBody(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 2,
+      padding: EdgeInsets.all(10.0),
+      childAspectRatio: 8.0 / 9.0,
+      children: _buildChildren(context),
+    );
+  }
+
+  List<Widget> _buildChildren(BuildContext context) {
+    List<Widget> children = List();
+
+    
+    return children;
   }
 
   List<Widget> _buildActions(BuildContext context) {
