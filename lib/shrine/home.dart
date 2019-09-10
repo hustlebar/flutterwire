@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwire/shrine/product.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -24,6 +25,18 @@ class HomePage extends StatelessWidget {
       childAspectRatio: 8.0 / 9.0,
       children: _buildCards(context, 6),
     );
+  }
+
+  //Will be used in the future
+  List<Card> _buildChildren(BuildContext context) {
+    List<Product> products;
+    if (products == null || products.isEmpty) {
+      return const <Card>[];
+    }
+
+    return products.map((product) {
+      return Card();
+    }).toList();
   }
 
   List<Card> _buildCards(BuildContext context, int count) {
