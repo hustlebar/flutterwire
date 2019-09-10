@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return GridView.count(
       crossAxisCount: 2,
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(16.0),
       childAspectRatio: 8.0 / 9.0,
       children: _buildChildren(context),
     );
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           AspectRatio(
-            aspectRatio: 25.0 / 11.0,
+            aspectRatio: 18.0 / 11.0,
             child: Image.asset('assets/images/logo.png'),
           ),
 
