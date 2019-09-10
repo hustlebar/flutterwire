@@ -22,21 +22,32 @@ class HomePage extends StatelessWidget {
       crossAxisCount: 2,
       padding: EdgeInsets.all(16.0),
       childAspectRatio: 8.0 / 9.0,
-      children: _buildChildren(context),
+      children: _buildCards(context, 6),
     );
   }
 
-  List<Widget> _buildChildren(BuildContext context) {
-    List<Widget> children = List();
+  List<Card> _buildCards(BuildContext context, int count) {
+    List<Card> cards = List.generate(count,
+      (int index) => _buildCard(context)
+    );
 
-    children.add(Card(
+    return cards;
+  }
+
+  Card _buildCard(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
+    return Card(
       clipBehavior: Clip.antiAlias,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           AspectRatio(
             aspectRatio: 18.0 / 11.0,
-            child: Image.asset('assets/images/logo.png'),
+            child: Image.asset(
+              'assets/images/logo.png',
+              fit: BoxFit.fitWidth,
+            ),
           ),
 
           Padding(
@@ -44,16 +55,21 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Title'),
+                Text(
+                  'Title',
+                  style: theme.textTheme.title,
+                ),
                 SizedBox(height: 8.0,),
-                Text('Secondary title')
+                Text(
+                  'Secondary title',
+                  style: theme.textTheme.body2,
+                )
               ],
             ),
           )
         ],
       ),
-    ));
-    return children;
+    );
   }
 
   List<Widget> _buildActions(BuildContext context) {
