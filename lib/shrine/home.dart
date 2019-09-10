@@ -29,7 +29,30 @@ class HomePage extends StatelessWidget {
   List<Widget> _buildChildren(BuildContext context) {
     List<Widget> children = List();
 
-    
+    children.add(Card(
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          AspectRatio(
+            aspectRatio: 25.0 / 11.0,
+            child: Image.asset('assets/images/logo.png'),
+          ),
+
+          Padding(
+            padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text('Title'),
+                SizedBox(height: 8.0,),
+                Text('Secondary title')
+              ],
+            ),
+          )
+        ],
+      ),
+    ));
     return children;
   }
 
