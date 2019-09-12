@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'login.dart';
+import 'colors.dart';
 
 class ShrineApp extends StatelessWidget {
   @override
@@ -12,11 +13,24 @@ class ShrineApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shrine',
       home: LoginPage(),
+      theme: _buildTheme(),
 //      routes: ,
     );
   }
 
   ThemeData _buildTheme() {
     final ThemeData base = ThemeData.light();
+    return base.copyWith(
+      accentColor: kShrineBrown900,
+      primaryColor: kShrinePink100,
+      buttonTheme: base.buttonTheme.copyWith(
+        buttonColor: kShrinePink100,
+        textTheme: ButtonTextTheme.normal,
+      ),
+      scaffoldBackgroundColor: kShrineBackgroundWhite,
+      cardColor: kShrineBackgroundWhite,
+      textSelectionColor: kShrinePink100,
+      errorColor: kShrineErrorRed,
+    );
   }
 }
