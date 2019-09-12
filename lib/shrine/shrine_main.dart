@@ -15,4 +15,8 @@ class ShrineApp extends StatelessWidget {
 //      routes: ,
     );
   }
+
+  ThemeData _buildTheme() {
+    final ThemeData base = ThemeData.light();
+  }
 }
