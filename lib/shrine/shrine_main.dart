@@ -11,7 +11,7 @@ class ShrineApp extends StatelessWidget {
 
   Widget _build(BuildContext ctx) {
     return MaterialApp(
-      title: 'Shrine',
+      title: 'Shrine App',
       home: LoginPage(),
       theme: _buildTheme(),
 //      routes: ,
